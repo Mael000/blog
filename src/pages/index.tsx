@@ -69,9 +69,9 @@ export default class IndexPage extends React.Component<PageProps> {
                 <img src={config.siteLogo} />
                 <h1>
                   Hi. I am <br />
-                  Majid Hajian
+                  Davide Bellone
                 </h1>
-                <p>I write about JavaScript, Angular, Ember, React, Vue, GlimmerJs, NodeJs, Rails, Go, Gatsby and ...</p>
+                <p>I write about C#, .NET and the Microsoft world</p>
                 <Link to="/contact">
                   <Button big={true}>
                     <svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">

@@ -1,4 +1,3 @@
-
 ---
 date: "2019-11-20"
 title: "How to ping from an Azure App service"
