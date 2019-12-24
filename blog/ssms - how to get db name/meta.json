@@ -1,0 +1,35 @@
+{
+    "name": "Have you ever forgotten your SQL server instance name?",
+    "code4it": {
+        "published": true,
+        "url": "https://code4it.wordpress.com/2019/05/17/few-things-i-learned-at-global-azure-bootcamp-2019-in-turin-api-gateways/",
+        "tags": [
+            "API Gateway",
+            "Azure",
+            "Ocelot",
+            "SSL Termination"
+        ]
+    },
+    "medium": {
+        "published": true,
+        "url": "https://medium.com/code4it/few-things-i-learned-at-global-azure-bootcamp-2019-in-turin-api-gateways-2bc18c3cd19",
+        "tags": [
+            "Api Gateway",
+            "Global Azure Bootcamp",
+            "Ocelot",
+            "SSL",
+            "Misc"
+        ]
+    },
+    "dev.to": {
+        "published": true,
+        "url": "https://dev.to/bellons91/few-things-i-learned-at-global-azure-bootcamp-2019-in-turin-api-gateways-3ifc",
+        "description": "An overview on API Gateways: what they are and why they matter",
+        "tags": [
+            "Api Gateway",
+            "Global Azure Bootcamp",
+            "Ocelot",
+            "SSL"
+        ]
+    }
+}
