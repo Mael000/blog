@@ -8,7 +8,7 @@ export default {
   siteBanner: '/assets/banner.jpg', // Your image for og:image tag. You can find it in the /static folder
   defaultBg: '/assets/bg.png', // default post background header
   favicon: 'src/favicon.png', // Your image for favicons. You can find it in the /src folder
-  siteDescription: 'Code4IT - Italian way of code', // Your site description
+  siteDescription: 'Italian way of code', // Your site description
   author: 'Davide Bellone', // Author for schemaORGJSONLD
   siteLogo: '/assets/logo.png', // Image for schemaORGJSONLD
 
@@ -29,5 +29,9 @@ export default {
 
   //
   Google_Tag_Manager_ID: 'GTM-XXXXXXX',
-  POST_PER_PAGE: 4,
+  POST_PER_PAGE: 5,
+
+  //
+  homepageBanner:
+    'https://res.cloudinary.com/bellons/image/upload/t_ww2/Code4IT/Thoughts%20after%20my%20very%20first%20public%20speech/microphone.jpg',
 };

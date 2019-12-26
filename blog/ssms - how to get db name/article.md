@@ -1,13 +1,10 @@
 ---
 date: "2019-11-20"
-title: "How to ping from an Azure App service"
+title: "Have you ever forgotten your SQL server instance name?"
 category: "Misc"
 tags: ['Talks', 'Career']
 banner: "https://res.cloudinary.com/bellons/image/upload/v1576150144/Code4IT/TCPPING/cover_tcpping.jpg"
 ---
-
-# Have you ever forgotten your SQL server instance name?
-
 This article is just a note for something I forget the most: my LocalDB instance names.
 
 Sometimes when I open SQL Server Management Studio (SSMS) I lose time thinking and trying to figure out what is the name of my LocalDb. 
