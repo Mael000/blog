@@ -55,8 +55,12 @@ const HomepageHeader: any = styled.div`
     `;
 
 const HomepageContent: any = styled.div`
-  max-width: 30rem;
   text-align: ${(props: any) => (props.center ? 'center' : 'left')};
+  margin: 0 3em;
+  display: flex;
+  -webkit-flex-flow: row;
+  flex-flow: row;
+  flex-wrap: wrap;
 `;
 
 export default class IndexPage extends React.Component<PageProps> {
@@ -90,9 +94,8 @@ export default class IndexPage extends React.Component<PageProps> {
                 </Link> */}
               </div>
             </HomepageHeader>
-
+            <h2>Latest articles</h2>
             <HomepageContent>
-              <h2>Latest articles</h2>
               {edges.map(post => (
                 <HomepageArticle
                   title={post.node.frontmatter.title}

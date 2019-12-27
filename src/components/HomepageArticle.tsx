@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
@@ -31,14 +31,23 @@ const Excerpt = styled.p`
   margin-top: 1rem;
   margin-bottom: 1rem;
 `;
-const HomeImage = styled.div`
-  background-color: red;
-`;
+// const HomeImage = (img: string) => styled.div`
+//   background-color: red;
+//   min-height: 10rem;
+//   background-image: url('${img}')
+// `;
 
 const PostWrapper = styled.article`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+`;
+
+const Card = styled.div`
+  padding: 0.5rem;
+  margin: 0.5rem;
+  box-shadow: 2px 4px 9px 1px rgba(0, 0, 0, 0.75);
+  width: 20rem;
 `;
 
 interface Props {
@@ -48,28 +57,45 @@ interface Props {
   slug: string;
   timeToRead: number;
   category: string;
+  mainImage: string;
 }
+
+const MainImage = props => <img src={props.src} />;
 
 export class HomepageArticle extends React.PureComponent<Props> {
   public render() {
-    const { title, date, excerpt, slug, timeToRead, category } = this.props;
-    const firstChar = title.charAt(0);
+    const { title, date, excerpt, slug, timeToRead, category, mainImage } = this.props;
+    const mainImage2 = 'https://res.cloudinary.com/bellons/image/upload/v1576150144/Code4IT/TCPPING/cover_tcpping.jpg';
 
+    const t = 'rheoirheoihroe oer e ore';
     return (
-      <PostWrapper>
-        <HomeImage />
-        <Post>
+      <Card>
+        <MainImage src={mainImage2} />
+        <div>
           <Title>
-            <Initiale>{firstChar}</Initiale>
             <Link to={`/blog/${slug}`}>{title}</Link>
           </Title>
           <Subline>
+            <Excerpt>{t}</Excerpt>
             {date} &mdash; {timeToRead} Min Read &mdash; In
             <Link to={`/categories/${kebabCase(category)}`}> {category}</Link>
           </Subline>
-          <Excerpt>{excerpt}</Excerpt>
-        </Post>
-      </PostWrapper>
+        </div>
+      </Card>
+      // <PostWrapper>
+      //   <HomeImage />
+      //   <Post>
+      //     <Title>
+      //       <Initiale>{firstChar}</Initiale>
+      //       <Link to={`/blog/${slug}`}>{title}</Link>
+      //     </Title>
+      //     <Subline>
+      //       {date} &mdash; {timeToRead} Min Read &mdash; In
+      //       <Link to={`/categories/${kebabCase(category)}`}> {category}</Link>
+      //     </Subline>
+      //     <Excerpt>{excerpt}</Excerpt>
+      //   </Post>
+      // </PostWrapper>
     );
   }
 }
