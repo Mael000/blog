@@ -16,6 +16,12 @@ const Homepage = styled.main`
   flex-direction: column;
 `;
 
+const HomePageHeader = styled.h2`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+`;
+
 // const GridRow: any = styled.div`
 //   flex: 1;
 //   display: flex;
@@ -44,7 +50,7 @@ const Homepage = styled.main`
 
 const HomepageHeader: any = styled.div`
     min-height:15rem;
-    background-image: url('${config.homepageBanner}');
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${config.homepageBanner}');
     h1, p {
       color: white;
     }
@@ -52,6 +58,12 @@ const HomepageHeader: any = styled.div`
     flex-direction:column;
     align-items: center;
     justify-content: center;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    @media ${media.phone} {
+      flex-wrap: wrap;
+        }
     `;
 
 const HomepageContent: any = styled.div`
@@ -61,6 +73,7 @@ const HomepageContent: any = styled.div`
   -webkit-flex-flow: row;
   flex-flow: row;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 
 export default class IndexPage extends React.Component<PageProps> {
@@ -94,7 +107,13 @@ export default class IndexPage extends React.Component<PageProps> {
                 </Link> */}
               </div>
             </HomepageHeader>
-            <h2>Latest articles</h2>
+            <HomePageHeader>
+              {' '}
+              <span>Latest articles </span>
+              <span>
+                <Link to={'/blog'}>All articles ({totalCount}) </Link>
+              </span>
+            </HomePageHeader>
             <HomepageContent>
               {edges.map(post => (
                 <HomepageArticle
@@ -107,9 +126,6 @@ export default class IndexPage extends React.Component<PageProps> {
                   key={post.node.fields.slug}
                 />
               ))}
-              <p className={'textRight'}>
-                <Link to={'/blog'}>All articles ({totalCount})</Link>
-              </p>
             </HomepageContent>
           </Homepage>
         </Wrapper>
@@ -119,7 +135,7 @@ export default class IndexPage extends React.Component<PageProps> {
 }
 export const IndexQuery = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 10) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 9) {
       totalCount
       edges {
         node {

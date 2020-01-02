@@ -48,6 +48,10 @@ const Card = styled.div`
   margin: 0.5rem;
   box-shadow: 2px 4px 9px 1px rgba(0, 0, 0, 0.75);
   width: 20rem;
+  @media (max-width: 600px) {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
 `;
 
 interface Props {

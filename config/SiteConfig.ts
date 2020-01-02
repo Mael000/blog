@@ -32,6 +32,5 @@ export default {
   POST_PER_PAGE: 5,
 
   //
-  homepageBanner:
-    'https://res.cloudinary.com/bellons/image/upload/t_ww2/Code4IT/Thoughts%20after%20my%20very%20first%20public%20speech/microphone.jpg',
+  homepageBanner: 'https://res.cloudinary.com/bellons/image/upload/t_ww2/Code4IT/Performance%20optimization%20csharp/Cover_1_wdpnsq.jpg',
 };
