@@ -31,17 +31,6 @@ const Excerpt = styled.p`
   margin-top: 1rem;
   margin-bottom: 1rem;
 `;
-// const HomeImage = (img: string) => styled.div`
-//   background-color: red;
-//   min-height: 10rem;
-//   background-image: url('${img}')
-// `;
-
-const PostWrapper = styled.article`
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-`;
 
 const Card = styled.div`
   padding: 0.5rem;
@@ -86,20 +75,6 @@ export class HomepageArticle extends React.PureComponent<Props> {
           </Subline>
         </div>
       </Card>
-      // <PostWrapper>
-      //   <HomeImage />
-      //   <Post>
-      //     <Title>
-      //       <Initiale>{firstChar}</Initiale>
-      //       <Link to={`/blog/${slug}`}>{title}</Link>
-      //     </Title>
-      //     <Subline>
-      //       {date} &mdash; {timeToRead} Min Read &mdash; In
-      //       <Link to={`/categories/${kebabCase(category)}`}> {category}</Link>
-      //     </Subline>
-      //     <Excerpt>{excerpt}</Excerpt>
-      //   </Post>
-      // </PostWrapper>
     );
   }
 }
