@@ -100,11 +100,12 @@ export default class IndexPage extends React.Component<PageProps> {
                 <HomepageArticle
                   title={post.node.frontmatter.title}
                   date={post.node.frontmatter.date}
-                  excerpt={post.node.excerpt}
+                  excerpt= {post.node.excerpt || 'default descr'}
                   timeToRead={post.node.timeToRead}
                   slug={post.node.fields.slug}
                   category={post.node.frontmatter.category}
                   key={post.node.fields.slug}
+                  mainImage = {post.node.frontmatter.banner || config.defaultArticleBanner}
                 />
               ))}
             </HomepageContent>
@@ -123,10 +124,12 @@ export const IndexQuery = graphql`
           fields {
             slug
           }
+          excerpt
           frontmatter {
             title
             date(formatString: "DD.MM.YYYY")
             category
+            banner
           }
           timeToRead
         }

@@ -58,18 +58,15 @@ const MainImage = props => <img src={props.src} />;
 export class HomepageArticle extends React.PureComponent<Props> {
   public render() {
     const { title, date, excerpt, slug, timeToRead, category, mainImage } = this.props;
-    const mainImage2 = 'https://res.cloudinary.com/bellons/image/upload/v1576150144/Code4IT/TCPPING/cover_tcpping.jpg';
-
-    const t = 'rheoirheoihroe oer e ore';
     return (
       <Card>
-        <MainImage src={mainImage2} />
+        <MainImage src={mainImage} />
         <div>
           <Title>
             <Link to={`/blog/${slug}`}>{title}</Link>
           </Title>
           <Subline>
-            <Excerpt>{t}</Excerpt>
+            <Excerpt>{excerpt}</Excerpt>
             {date} &mdash; {timeToRead} Min Read &mdash; In
             <Link to={`/categories/${kebabCase(category)}`}> {category}</Link>
           </Subline>
