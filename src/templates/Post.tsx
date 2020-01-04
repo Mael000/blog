@@ -68,6 +68,7 @@ export const postQuery = graphql`
       fields {
         slug
       }
+      excerpt
       frontmatter {
         title
         date(formatString: "DD.MM.YYYY")

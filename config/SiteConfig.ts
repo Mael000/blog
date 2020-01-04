@@ -33,4 +33,5 @@ export default {
 
   //
   homepageBanner: 'https://res.cloudinary.com/bellons/image/upload/t_ww2/Code4IT/Performance%20optimization%20csharp/Cover_1_wdpnsq.jpg',
+  defaultArticleBanner: 'https://www.amoreaquattrozampe.it/wp-content/uploads/2019/08/lingua-cane.jpg',
 };

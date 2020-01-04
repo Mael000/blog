@@ -4,7 +4,7 @@ title: "5 things you didn't know about Guid in C#"
 category: "C#"
 tags: ['C#', 'Guid']
 banner: "/assets/bg/1.jpg"
-
+excerpt: 'Ciao sono una descizione dei guid'
 ---
 
 ## #1: Guids have a fixed size
