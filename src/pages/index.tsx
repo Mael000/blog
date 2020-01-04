@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Layout, Wrapper, Button, Article } from '../components';
+import { Layout, Wrapper, Button, Article, Header } from '../components';
 import PageProps from '../models/PageProps';
 import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
@@ -85,16 +85,15 @@ export default class IndexPage extends React.Component<PageProps> {
         <Wrapper fullWidth={true}>
           <Helmet title={`Homepage | ${config.siteTitle}`} />
           <Homepage>
-            <HomepageHeader>
+            <Header banner={config.homepageBanner}>
               <h1>{config.siteTitle}</h1>
               <p>{config.siteDescription}</p>
-            </HomepageHeader>
-            <HomePageHeader>
-              <h1>Latest articles </h1>
-              <p>
-                <Link to={'/blog'}>All articles ({totalCount}) </Link>
-              </p>
-            </HomePageHeader>
+            </Header>
+
+            <h1>Latest articles </h1>
+            <p>
+              <Link to={'/blog'}>All articles ({totalCount}) </Link>
+            </p>
             <HomepageContent>
               {edges.map(post => (
                 <HomepageArticle
@@ -105,6 +104,7 @@ export default class IndexPage extends React.Component<PageProps> {
                   slug={post.node.fields.slug}
                   category={post.node.frontmatter.category}
                   key={post.node.fields.slug}
+                  mainImage={post.node.frontmatter.banner || ''}
                 />
               ))}
             </HomepageContent>

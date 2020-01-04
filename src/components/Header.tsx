@@ -6,26 +6,23 @@ import { media } from '../utils/media';
 import config from '../../config/SiteConfig';
 
 const HeaderWrapper: any = styled.header`
-  position: relative;
-  background: linear-gradient(
-      -185deg,
-      ${props => rgba(darken(0.1, props.theme.colors.primary), 0.6)},
-      ${props => rgba(lighten(0.1, props.theme.colors.grey.dark), 0.8)}
-    ),
+  // position: relative;
+  min-height:15rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
     url(${(props: any) => props.banner}) no-repeat;
-  background-size: cover;
-  padding: 8rem 2rem 10rem;
-  text-align: center;
-  ::after {
-    background: transparent url(/assets/mask.svg) no-repeat bottom left;
-    background-size: 101%;
-    bottom: -2px;
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    width: 100%;
+    h1, p {
+      color: white;
+    }
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    @media ${media.phone} {
+      flex-wrap: wrap;
+        }
   }
   @media ${media.tablet} {
     padding: 4rem 2rem 6rem;
