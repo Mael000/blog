@@ -3,7 +3,7 @@ date: "2019-11-20"
 title: "Have you ever forgotten your SQL server instance name?"
 category: "Misc"
 tags: ['Talks', 'Career']
-banner: "https://res.cloudinary.com/bellons/image/upload/v1576150144/Code4IT/TCPPING/cover_tcpping.jpg"
+banner: "https://res.cloudinary.com/bellons/image/upload/t_ww2/Code4IT/TCPPING/cover_tcpping.jpg"
 ---
 This article is just a note for something I forget the most: my LocalDB instance names.
 

@@ -53,7 +53,13 @@ interface Props {
   mainImage: string;
 }
 
-const MainImage = props => <img src={props.src} />;
+const MainImage = styled.div`
+  height: 10rem;
+  background-repeat: no-repeat;
+  background-image: url(${(props: any) => props.src});
+  background-size: cover;
+  background-position: center;
+`;
 
 export class HomepageArticle extends React.PureComponent<Props> {
   public render() {

@@ -3,7 +3,7 @@ date: "2019-11-20"
 title: "Thoughts after my very first public speech"
 category: "Misc"
 tags: ['Talks', 'Career']
-banner: "https://res.cloudinary.com/bellons/image/upload/v1571566248/Code4IT/Thoughts%20after%20my%20very%20first%20public%20speech/microphone.jpg"
+banner: "https://res.cloudinary.com/bellons/image/upload/t_ww2/Code4IT/Thoughts%20after%20my%20very%20first%20public%20speech/microphone.jpg"
 ---
 
 Days ago I had my first speech. 
