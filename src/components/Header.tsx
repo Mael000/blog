@@ -42,6 +42,10 @@ const Content = styled.div`
       color: white;
     }
   }
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 `;
 
 interface Props {

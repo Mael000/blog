@@ -8,6 +8,7 @@ import config from '../../config/SiteConfig';
 import '../utils/prismjs-theme.css';
 import PathContext from '../models/PathContext';
 import Post from '../models/Post';
+import { MainNavigation } from '../components/MainNavigation';
 
 const PostContent = styled.div`
   margin-top: 4rem;
@@ -38,6 +39,7 @@ export default class PostPage extends React.PureComponent<Props> {
                 <Link to={`/categories/${kebabCase(post.frontmatter.category)}`}>{post.frontmatter.category}</Link>
               </Subline>
             </Header>
+            <MainNavigation></MainNavigation>
             <Wrapper>
               <Content>
                 <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />

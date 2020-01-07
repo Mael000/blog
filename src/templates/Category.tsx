@@ -5,6 +5,7 @@ import { Layout, Wrapper, Header, Subline, Article, SectionTitle, Content } from
 import config from '../../config/SiteConfig';
 import kebabCase from 'lodash/kebabCase';
 import PageProps from '../models/PageProps';
+import { MainNavigation } from '../components/MainNavigation';
 
 export default class Category extends React.PureComponent<PageProps> {
   public render() {
@@ -22,6 +23,8 @@ export default class Category extends React.PureComponent<PageProps> {
             {subline} (See <Link to="/categories">all categories</Link>)
           </Subline>
         </Header>
+        <MainNavigation></MainNavigation>
+
         <Wrapper>
           <Content>
             {posts

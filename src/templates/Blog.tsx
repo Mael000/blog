@@ -4,6 +4,7 @@ import { Layout, Article, Wrapper, SectionTitle, Header, Content, Pagination } f
 import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
 import Data from '../models/Data';
+import { MainNavigation } from '../components/MainNavigation';
 
 interface Props {
   data: Data;
@@ -27,6 +28,7 @@ export default class BlogPage extends React.Component<Props> {
           <Link to="/">{config.siteTitle}</Link>
           <SectionTitle uppercase={true}>Latest stories ({totalCount})</SectionTitle>
         </Header>
+        <MainNavigation></MainNavigation>
         <Wrapper>
           <Content>
             {edges.map(post => (

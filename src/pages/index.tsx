@@ -10,6 +10,7 @@ import rgba from 'polished/lib/color/rgba';
 import darken from 'polished/lib/color/darken';
 import lighten from 'polished/lib/color/lighten';
 import { HomepageArticle } from '../components/HomepageArticle';
+import { MainNavigation } from '../components/MainNavigation';
 
 const Homepage = styled.main`
   display: flex;
@@ -89,6 +90,7 @@ export default class IndexPage extends React.Component<PageProps> {
               <h1>{config.siteTitle}</h1>
               <p>{config.siteDescription}</p>
             </Header>
+            <MainNavigation></MainNavigation>
 
             <h1>Latest articles </h1>
             <p>

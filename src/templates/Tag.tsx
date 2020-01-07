@@ -5,6 +5,7 @@ import { Article, Content, Header, Layout, SectionTitle, Subline, Wrapper } from
 import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
 import kebabCase from 'lodash/kebabCase';
+import { MainNavigation } from '../components/MainNavigation';
 
 export default class TagTemplate extends React.PureComponent<PageProps> {
   public render() {
@@ -22,6 +23,8 @@ export default class TagTemplate extends React.PureComponent<PageProps> {
             {subline} (See <Link to="/tags">all tags</Link>)
           </Subline>
         </Header>
+        <MainNavigation></MainNavigation>
+
         <Wrapper>
           <Content>
             {posts

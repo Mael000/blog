@@ -6,6 +6,7 @@ import { Layout, Wrapper, Header, SectionTitle, Content, Title } from '../compon
 
 import config from '../../config/SiteConfig';
 import PageProps from '../models/PageProps';
+import { MainNavigation } from '../components/MainNavigation';
 
 export default class AllCategoryTemplate extends React.PureComponent<PageProps> {
   public render() {
@@ -18,6 +19,7 @@ export default class AllCategoryTemplate extends React.PureComponent<PageProps> 
             <Link to="/">{config.siteTitle}</Link>
             <SectionTitle>Categories</SectionTitle>
           </Header>
+          <MainNavigation></MainNavigation>
           <Wrapper>
             <Content>
               {categories.map((category, index: number) => (

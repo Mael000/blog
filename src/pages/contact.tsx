@@ -5,6 +5,7 @@ import { Layout, Wrapper, Header, Button, Content, SectionTitle } from '../compo
 
 import config from '../../config/SiteConfig';
 import PageProps from '../models/PageProps';
+import { MainNavigation } from '../components/MainNavigation';
 
 export default class ContactPage extends React.Component<PageProps> {
   public render() {
@@ -15,6 +16,8 @@ export default class ContactPage extends React.Component<PageProps> {
           <Link to="/">{config.siteTitle}</Link>
           <SectionTitle uppercase={true}>Contact</SectionTitle>
         </Header>
+        <MainNavigation></MainNavigation>
+
         <Wrapper>
           <Content>
             <p>Super cool intro text to get people contacting me!</p>
