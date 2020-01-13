@@ -33,10 +33,9 @@ export default class PostPage extends React.PureComponent<Props> {
             <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
             <Header banner={post.frontmatter.banner}>
               <Link to="/">{config.siteTitle}</Link>
-              <SectionTitle>{post.frontmatter.title}</SectionTitle>
+              <h1>{post.frontmatter.title}</h1>
               <Subline light={true}>
-                {post.frontmatter.date} &mdash; {post.timeToRead} Min Read &mdash; In{' '}
-                <Link to={`/categories/${kebabCase(post.frontmatter.category)}`}>{post.frontmatter.category}</Link>
+                {post.frontmatter.date} &mdash; {post.timeToRead} Min Read
               </Subline>
             </Header>
             <MainNavigation />

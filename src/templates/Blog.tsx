@@ -26,7 +26,7 @@ export default class BlogPage extends React.Component<Props> {
         <Helmet title={`Blog | ${config.siteTitle}`} />
         <Header>
           <Link to="/">{config.siteTitle}</Link>
-          <SectionTitle uppercase={true}>Latest stories ({totalCount})</SectionTitle>
+          <h1>Latest articles ({totalCount})</h1>
         </Header>
         <MainNavigation />
         <Wrapper>
@@ -40,6 +40,7 @@ export default class BlogPage extends React.Component<Props> {
                 slug={post.node.fields.slug}
                 category={post.node.frontmatter.category}
                 key={post.node.fields.slug}
+                tags={post.node.frontmatter.tags || []}
               />
             ))}
             <Pagination currentPage={currentPage} totalPages={totalPages} url={'blog'} />
@@ -62,6 +63,7 @@ export const BlogQuery = graphql`
             title
             date(formatString: "DD.MM.YYYY")
             category
+            tags
           }
           excerpt(pruneLength: 200)
           timeToRead

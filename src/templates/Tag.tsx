@@ -23,7 +23,7 @@ export default class TagTemplate extends React.PureComponent<PageProps> {
             {subline} (See <Link to="/tags">all tags</Link>)
           </Subline>
         </Header>
-        <MainNavigation></MainNavigation>
+        <MainNavigation />
 
         <Wrapper>
           <Content>

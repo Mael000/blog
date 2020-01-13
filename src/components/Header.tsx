@@ -46,6 +46,7 @@ const Content = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
+  padding: 0 2rem;
 `;
 
 interface Props {

@@ -48,7 +48,7 @@ const MainImage = styled.div`
 
 const TagsHolder = styled.div`
   a:after {
-    content: ',';
+    content: ', ';
   }
   a:last-child:after {
     content: '';
@@ -74,7 +74,7 @@ export class HomepageArticle extends React.PureComponent<Props> {
               <TagsHolder>
                 Tags:
                 {tags.map((tag, i) => (
-                  <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`}>
+                  <Link to={`/tags/${kebabCase(tag)}`} key={`arthp-${slug}-${i}`}>
                     {tag}
                   </Link>
                 ))}

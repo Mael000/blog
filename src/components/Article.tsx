@@ -33,9 +33,18 @@ interface Props {
   tags: string[];
 }
 
+const TagsHolder = styled.div`
+  a:after {
+    content: ', ';
+  }
+  a:last-child:after {
+    content: '';
+  }
+`;
+
 export class Article extends React.PureComponent<Props> {
   public render() {
-    const { title, date, excerpt, slug, timeToRead, category } = this.props;
+    const { title, date, excerpt, slug, timeToRead, tags } = this.props;
 
     return (
       <Post>
@@ -43,8 +52,15 @@ export class Article extends React.PureComponent<Props> {
           <Link to={`/blog/${slug}`}>{title}</Link>
         </Title>
         <Subline>
-          {date} &mdash; {timeToRead} Min Read &mdash; In
-          <Link to={`/categories/${kebabCase(category)}`}> {category}</Link>
+          {date} &mdash; {timeToRead} Min Read
+          <TagsHolder>
+            Tags:
+            {tags.map((tag, i) => (
+              <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`}>
+                {tag}
+              </Link>
+            ))}
+          </TagsHolder>
         </Subline>
         <Excerpt>{excerpt}</Excerpt>
       </Post>
