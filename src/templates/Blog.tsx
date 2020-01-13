@@ -28,7 +28,7 @@ export default class BlogPage extends React.Component<Props> {
           <Link to="/">{config.siteTitle}</Link>
           <SectionTitle uppercase={true}>Latest stories ({totalCount})</SectionTitle>
         </Header>
-        <MainNavigation></MainNavigation>
+        <MainNavigation />
         <Wrapper>
           <Content>
             {edges.map(post => (

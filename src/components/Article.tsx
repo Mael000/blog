@@ -17,15 +17,6 @@ const Title = styled.h2`
   margin-bottom: 0.75rem;
 `;
 
-const Initiale = styled.span`
-  position: absolute;
-  font-size: 7rem;
-  transform: translate(-50%, -50%);
-  opacity: 0.08;
-  user-select: none;
-  z-index: -1;
-`;
-
 const Excerpt = styled.p`
   grid-column: -1 / 1;
   margin-top: 1rem;
@@ -39,17 +30,16 @@ interface Props {
   slug: string;
   timeToRead: number;
   category: string;
+  tags: string[];
 }
 
 export class Article extends React.PureComponent<Props> {
   public render() {
     const { title, date, excerpt, slug, timeToRead, category } = this.props;
-    const firstChar = title.charAt(0);
 
     return (
       <Post>
         <Title>
-          <Initiale>{firstChar}</Initiale>
           <Link to={`/blog/${slug}`}>{title}</Link>
         </Title>
         <Subline>

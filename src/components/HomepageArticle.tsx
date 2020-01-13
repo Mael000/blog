@@ -4,26 +4,10 @@ import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import { Subline } from './Subline';
 
-const Post = styled.article`
-  display: flex;
-  flex-direction: column;
-  margin-top: 3.5rem;
-  margin-bottom: 3.5rem;
-`;
-
 const Title = styled.h2`
   position: relative;
   text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   margin-bottom: 0.75rem;
-`;
-
-const Initiale = styled.span`
-  position: absolute;
-  font-size: 7rem;
-  transform: translate(-50%, -50%);
-  opacity: 0.08;
-  user-select: none;
-  z-index: -1;
 `;
 
 const Excerpt = styled.p`
@@ -51,6 +35,7 @@ interface Props {
   timeToRead: number;
   category: string;
   mainImage: string;
+  tags: string[];
 }
 
 const MainImage = styled.div`
@@ -61,9 +46,18 @@ const MainImage = styled.div`
   background-position: center;
 `;
 
+const TagsHolder = styled.div`
+  a:after {
+    content: ',';
+  }
+  a:last-child:after {
+    content: '';
+  }
+`;
+
 export class HomepageArticle extends React.PureComponent<Props> {
   public render() {
-    const { title, date, excerpt, slug, timeToRead, category, mainImage } = this.props;
+    const { title, date, excerpt, slug, timeToRead, category, mainImage, tags } = this.props;
     return (
       <Card>
         <MainImage src={mainImage} />
@@ -73,8 +67,19 @@ export class HomepageArticle extends React.PureComponent<Props> {
           </Title>
           <Subline>
             <Excerpt>{excerpt}</Excerpt>
-            {date} &mdash; {timeToRead} Min Read &mdash; In
-            <Link to={`/categories/${kebabCase(category)}`}> {category}</Link>
+            <div>
+              <div>
+                {date} &mdash; {timeToRead} Min Read
+              </div>
+              <TagsHolder>
+                Tags:
+                {tags.map((tag, i) => (
+                  <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`}>
+                    {tag}
+                  </Link>
+                ))}
+              </TagsHolder>
+            </div>
           </Subline>
         </div>
       </Card>

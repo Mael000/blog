@@ -3,7 +3,7 @@ import { media } from '../utils/media';
 
 export const Content = styled.div`
   box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
-  padding: 2rem 4rem;
+  padding: 2rem 0;
   background-color: ${props => props.theme.colors.bg};
   form {
     p {

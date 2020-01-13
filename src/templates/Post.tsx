@@ -39,7 +39,7 @@ export default class PostPage extends React.PureComponent<Props> {
                 <Link to={`/categories/${kebabCase(post.frontmatter.category)}`}>{post.frontmatter.category}</Link>
               </Subline>
             </Header>
-            <MainNavigation></MainNavigation>
+            <MainNavigation />
             <Wrapper>
               <Content>
                 <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
