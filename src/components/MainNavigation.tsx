@@ -9,6 +9,7 @@ export const Nav = styled.nav`
   justify-content: space-evenly;
   margin: 1em 0;
   flex-wrap: wrap;
+  align-items: center;
 `;
 
 export const NavItem = styled.div`
