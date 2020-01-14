@@ -9,9 +9,28 @@ import '../utils/prismjs-theme.css';
 import PathContext from '../models/PathContext';
 import Post from '../models/Post';
 import { MainNavigation } from '../components/MainNavigation';
+import { media } from '../utils/media';
 
-const PostContent = styled.div`
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  @media ${media.tablet} {
+    flex-wrap: wrap;
+  }
+`;
+
+const PostContent = styled.article`
   margin-top: 4rem;
+  @media ${media.tablet} {
+    margin-top: 0;
+  }
+`;
+
+const PostSidebar = styled.div`
+  margin-top: 4rem;
+  @media ${media.tablet} {
+    margin-top: 0;
+  }
 `;
 
 interface Props {
@@ -41,18 +60,22 @@ export default class PostPage extends React.PureComponent<Props> {
             <MainNavigation />
             <Wrapper>
               <Content>
-                <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
-                {post.frontmatter.tags ? (
-                  <Subline>
-                    Tags: &#160;
-                    {post.frontmatter.tags.map((tag, i) => (
-                      <Link key={i} to={`/tags/${kebabCase(tag)}`}>
-                        <strong>{tag}</strong> {i < post.frontmatter.tags.length - 1 ? `, ` : ``}
-                      </Link>
-                    ))}
-                  </Subline>
-                ) : null}
-                <PrevNext prev={prev} next={next} />
+                <ContentWrapper>
+                  <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
+                  <PostSidebar>
+                    {post.frontmatter.tags ? (
+                      <Subline>
+                        Tags: &#160;
+                        {post.frontmatter.tags.map((tag, i) => (
+                          <Link key={i} to={`/tags/${kebabCase(tag)}`}>
+                            <strong>{tag}</strong> {i < post.frontmatter.tags.length - 1 ? `, ` : ``}
+                          </Link>
+                        ))}
+                      </Subline>
+                    ) : null}
+                    <PrevNext prev={prev} next={next} />
+                  </PostSidebar>
+                </ContentWrapper>
               </Content>
             </Wrapper>
           </>

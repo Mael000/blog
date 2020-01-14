@@ -30,10 +30,10 @@ export class MainNavigation extends React.PureComponent<Props> {
           <Link to={'/blog'}>All articles </Link>
         </NavItem>
         <NavItem>
-          <Link to={'/contact'}>About me</Link>
+          <Link to={'/my-speeches'}>My speeches</Link>{' '}
         </NavItem>
         <NavItem>
-          <Link to={'/my-speeches'}>My speeches</Link>{' '}
+          <Link to={'/contact'}>About me and this site</Link>
         </NavItem>
       </Nav>
     );
