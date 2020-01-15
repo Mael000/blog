@@ -65,7 +65,7 @@ export default class IndexPage extends React.Component<PageProps> {
 }
 export const IndexQuery = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 5) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 5, filter: { fields: { draft: { eq: false } } }) {
       totalCount
       edges {
         node {

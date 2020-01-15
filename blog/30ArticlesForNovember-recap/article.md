@@ -1,5 +1,5 @@
 ---
-date: "2019-12-15"
+date: "2020-01-16"
 title: "A recap of my 30ArticlesForNovember"
 category: "Misc"
 tags: ['C#', '.NET', 'Programming']

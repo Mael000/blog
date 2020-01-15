@@ -75,5 +75,12 @@ module.exports = {
         icon: config.favicon,
       },
     },
+    {
+      resolve: 'gatsby-plugin-draft',
+      options: {
+      },
+    },
+
+
   ]
 };
