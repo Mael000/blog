@@ -12,6 +12,8 @@ const HeaderWrapper: any = styled.header`
     url(${(props: any) => props.banner}) no-repeat;
     h1, p {
       color: white;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
     display: flex;
     flex-direction:column;
@@ -47,6 +49,7 @@ const Content = styled.div`
   flex-flow: column;
   align-items: center;
   padding: 0 2rem;
+  text-align: center;
 `;
 
 interface Props {

@@ -4,6 +4,7 @@ const sizes = {
 };
 
 export const media = {
+  desktop: `(min-width: ${sizes.tablet})`,
   tablet: `(max-width: ${sizes.tablet})`,
   phone: `(max-width: ${sizes.phone})`,
 };

@@ -21,9 +21,9 @@ export const Content = styled.div`
     }
   }
   @media ${media.tablet} {
-    padding: 3rem 3rem;
+    //  padding: 3rem 3rem;
   }
   @media ${media.phone} {
-    padding: 2rem 1.5rem;
+    // padding: 2rem 1.5rem;
   }
 `;

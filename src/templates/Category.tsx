@@ -23,8 +23,7 @@ export default class Category extends React.PureComponent<PageProps> {
             {subline} (See <Link to="/categories">all categories</Link>)
           </Subline>
         </Header>
-        <MainNavigation></MainNavigation>
-
+        <MainNavigation />
         <Wrapper>
           <Content>
             {posts

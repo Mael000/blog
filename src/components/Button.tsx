@@ -2,12 +2,14 @@ import styled from 'styled-components';
 import curriedDarken from 'polished/lib/color/darken';
 
 export const Button: any = styled.button`
+
+
   background: ${props => props.theme.colors.primary};
   border: none;
   display: inline-flex;
   align-items: center;
   margin: 0 0.5rem;
-  border-radius: ${(props: any) => (props.big ? '1.5rem' : '1rem')};
+  // border-radius: ${(props: any) => (props.big ? '1.5rem' : '1rem')};
   font-size: ${(props: any) => (props.big ? '1.2rem' : '1rem')};
   color: white;
   padding: ${(props: any) => (props.big ? '0.35rem 1.6rem' : '0.25rem 1.5rem')};
@@ -24,7 +26,11 @@ export const Button: any = styled.button`
   svg {
     width: 20px;
     height: 20px;
-    margin-right: 0.75rem;
     fill: white;
   }
+
+  svg+span{
+    margin-left: 0.75rem;
+  }
+
 `;
