@@ -73,7 +73,7 @@ export class HomepageArticle extends React.PureComponent<Props> {
               </div>
               <TagsHolder>
                 Tags:
-                {tags.map((tag, i) => (
+                {(tags || []).map((tag, i) => (
                   <Link to={`/tags/${kebabCase(tag)}`} key={`arthp-${slug}-${i}`}>
                     {tag}
                   </Link>

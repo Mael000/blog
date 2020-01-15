@@ -1,6 +1,6 @@
 const colors = {
-  primary: '#72cc96', // Color for buttons or links
-  bg: '#fff', // Background color
+  primary: '#317580', // Color for buttons or links
+  bg: '#36303005', // Background color
   white: '#fff',
   grey: {
     dark: 'rgba(0, 0, 0, 0.9)',

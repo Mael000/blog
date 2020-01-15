@@ -14,14 +14,14 @@ export default class MySpeechesPage extends React.Component<PageProps> {
         <Helmet title={`My speeches | ${config.siteTitle}`} />
         <Header>
           <Link to="/">{config.siteTitle}</Link>
-          <SectionTitle uppercase={true}>My speeches</SectionTitle>
+          <SectionTitle>My speeches</SectionTitle>
         </Header>
-        <MainNavigation></MainNavigation>
+        <MainNavigation />
 
         <Wrapper>
           <Content>
             <p>Super cool intro text to get people contacting me!</p>
-             All my speeches!
+            All my speeches!
           </Content>
         </Wrapper>
       </Layout>

@@ -7,17 +7,23 @@ import { HomepageArticle } from './HomepageArticle';
 import config from '../../config/SiteConfig';
 import { Article } from '.';
 import { SidebarArticle } from './SidebarArticle';
+import { media } from '../utils/media';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 6rem auto 0 auto;
+  margin: 1rem auto 0 auto;
   a {
     color: ${props => props.theme.colors.primary};
     display: flex;
     align-items: center;
   }
   justify-items: center;
+
+  @media ${media.desktop} {
+    position: sticky;
+    top: 0;
+  }
 `;
 
 interface Props {
@@ -30,6 +36,7 @@ export class PrevNext extends React.PureComponent<Props> {
     const { prev, next } = this.props;
     return (
       <Wrapper>
+        <h2>Other articles</h2>
         {prev && (
           <SidebarArticle
             title={prev.frontmatter.title}

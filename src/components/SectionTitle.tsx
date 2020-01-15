@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SectionTitle: any = styled.div`
+export const SectionTitle: any = styled.h1`
   font-size: ${props => props.theme.fontSize.big};
   text-transform: ${(props: any) => (props.uppercase ? 'uppercase' : 'normal')};
   text-align: center;

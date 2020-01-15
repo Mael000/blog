@@ -33,15 +33,13 @@ export default class IndexPage extends React.Component<PageProps> {
           <Helmet title={`Homepage | ${config.siteTitle}`} />
           <Homepage>
             <Header banner={config.homepageBanner}>
-              <h1>{config.siteTitle}</h1>
+              <SectionTitle>{config.siteTitle}</SectionTitle>
               <p>{config.siteDescription}</p>
             </Header>
             <MainNavigation />
             <Wrapper fullWidth="true">
               <Content>
-                <SectionTitle>
-                  <h1>Latest articles </h1>
-                </SectionTitle>
+                <h1> Latest articles </h1>
                 <HomepageContent>
                   {edges.map(post => (
                     <HomepageArticle

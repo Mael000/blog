@@ -10,6 +10,7 @@ import PathContext from '../models/PathContext';
 import Post from '../models/Post';
 import { MainNavigation } from '../components/MainNavigation';
 import { media } from '../utils/media';
+import { isMobile } from 'react-device-detect';
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -21,13 +22,22 @@ const ContentWrapper = styled.div`
 
 const PostContent = styled.article`
   margin-top: 4rem;
+  flex: 3;
+  box-shadow: 2px 4px 20px 1px rgba(0, 0, 0, 0.75);
+  margin: 1rem;
+  padding: 0.5rem;
+  max-width: 100%;
   @media ${media.tablet} {
-    margin-top: 0;
+    box-shadow: 0;
+    margin: 0 0 1rem 0;
+    box-shadow: none;
   }
 `;
 
 const PostSidebar = styled.div`
   margin-top: 4rem;
+  flex: 1;
+  padding: 0.5rem;
   @media ${media.tablet} {
     margin-top: 0;
   }
@@ -44,6 +54,9 @@ export default class PostPage extends React.PureComponent<Props> {
   public render() {
     const { prev, next } = this.props.pathContext;
     const post = this.props.data.markdownRemark;
+
+    const isFullWidth = isMobile;
+
     return (
       <Layout>
         {post ? (
@@ -52,13 +65,13 @@ export default class PostPage extends React.PureComponent<Props> {
             <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
             <Header banner={post.frontmatter.banner}>
               <Link to="/">{config.siteTitle}</Link>
-              <h1>{post.frontmatter.title}</h1>
+              <SectionTitle>{post.frontmatter.title}</SectionTitle>
               <Subline light={true}>
                 {post.frontmatter.date} &mdash; {post.timeToRead} Min Read
               </Subline>
             </Header>
             <MainNavigation />
-            <Wrapper>
+            <Wrapper fullWidth={isFullWidth}>
               <Content>
                 <ContentWrapper>
                   <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />

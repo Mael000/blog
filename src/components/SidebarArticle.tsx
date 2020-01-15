@@ -48,7 +48,7 @@ export class SidebarArticle extends React.PureComponent<Props> {
           {date}
           <TagsHolder>
             Tags:
-            {tags.map((tag, i) => (
+            {(tags || []).map((tag, i) => (
               <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`}>
                 {tag}
               </Link>
