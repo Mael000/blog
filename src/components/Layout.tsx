@@ -5,6 +5,8 @@ import theme from '../../config/Theme';
 import { media } from '../utils/media';
 import split from 'lodash/split';
 import './layout.scss';
+import { Button } from '.';
+import { TwitterIcon, LinkedInIcon } from './Icons';
 
 const GlobalStyle = createGlobalStyle`
   ::selection {
@@ -79,6 +81,14 @@ const FooterWrapper = styled.div`
   span {
     min-width: 10rem;
   }
+
+  a {
+    margin: 0 1rem;
+  }
+
+  svg {
+    fill: white;
+  }
 `;
 
 export class Layout extends React.PureComponent<{}> {
@@ -102,7 +112,14 @@ export class Layout extends React.PureComponent<{}> {
               <Footer>
                 <FooterWrapper>
                   <span>&copy; {split(data.site.buildTime, '.')[2]} by Davide Bellone</span>
-                  <span>ciaociaociaociaociaociaociaociaociaociaociao</span>
+                  <span>
+                    <a href="https://www.twitter.com/bellonedavide">
+                      <TwitterIcon />
+                    </a>
+                    <a href="https://www.linkedin.com/in/davide-bellone">
+                      <LinkedInIcon />
+                    </a>
+                  </span>
                 </FooterWrapper>
               </Footer>
             </React.Fragment>

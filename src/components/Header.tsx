@@ -1,12 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { darken, lighten } from 'polished';
-import rgba from 'polished/lib/color/rgba';
 import { media } from '../utils/media';
 import config from '../../config/SiteConfig';
 
 const HeaderWrapper: any = styled.header`
-  // position: relative;
   min-height:15rem;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
     url(${(props: any) => props.banner}) no-repeat;
