@@ -8,7 +8,7 @@ import './layout.scss';
 
 const GlobalStyle = createGlobalStyle`
   ::selection {
-    color: ${theme.colors.bg};
+    color: ${theme.colors.white};
     background: ${theme.colors.primary};
   }
   body {
@@ -62,9 +62,22 @@ const GlobalStyle = createGlobalStyle`
 
 const Footer = styled.footer`
   text-align: center;
-  padding: 3rem 0;
+  padding: 1.5rem 0;
+  background-color: #000000b3;
+  color: white;
+
   span {
     font-size: 0.75rem;
+  }
+`;
+
+const FooterWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row;
+  flex-wrap: wrap;
+  span {
+    min-width: 10rem;
   }
 `;
 
@@ -87,9 +100,10 @@ export class Layout extends React.PureComponent<{}> {
               <GlobalStyle />
               {children}
               <Footer>
-                &copy; {split(data.site.buildTime, '.')[2]} by Davide Bellone
-                <br />
-                <span>Last build: {data.site.buildTime}</span>
+                <FooterWrapper>
+                  <span>&copy; {split(data.site.buildTime, '.')[2]} by Davide Bellone</span>
+                  <span>ciaociaociaociaociaociaociaociaociaociaociao</span>
+                </FooterWrapper>
               </Footer>
             </React.Fragment>
           </ThemeProvider>
