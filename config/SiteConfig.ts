@@ -3,7 +3,7 @@ export default {
 
   siteTitle: 'Code4IT', // Navigation and Site Title
   siteTitleAlt: 'Code4IT', // Alternative Site title for SEO
-  siteUrl: 'https://typescript-power-blog.github.com', // Domain of your site. No trailing slash!
+  siteUrl: 'https://jolly-roentgen-73c66f.netlify.com/', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteBanner: '/assets/banner.jpg', // Your image for og:image tag. You can find it in the /static folder
   defaultBg: '/assets/bg.png', // default post background header
@@ -33,5 +33,5 @@ export default {
 
   //
   homepageBanner: 'https://res.cloudinary.com/bellons/image/upload/t_ww2/Code4IT/Performance%20optimization%20csharp/Cover_1_wdpnsq.jpg',
-  defaultArticleBanner: 'https://www.amoreaquattrozampe.it/wp-content/uploads/2019/08/lingua-cane.jpg',
+  defaultArticleBanner: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg',
 };

@@ -13,4 +13,5 @@ export const Wrapper: any = styled.div`
   @media ${media.phone} {
     padding: ${(props: any) => (props.fullWidth ? '0' : '0 1rem')};
   }
+  min-height: 70vh;
 `;
