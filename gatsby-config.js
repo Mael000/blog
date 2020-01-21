@@ -13,6 +13,7 @@ module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     siteUrl: config.siteUrl + pathPrefix,
+    mainImage: config.homepageBanner
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -24,6 +25,79 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-lodash',
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+               
+                siteUrl
+                mainImage
+                site_url: siteUrl
+                image_url : mainImage
+              }
+            }
+          }
+        `,
+        feeds: [
+          //https://www.npmjs.com/package/rss#itemoptions
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+
+              const customEnt = function(node){
+                var arr = [];
+                arr.push({ "content:encoded": node.html });
+                arr.push({ "dc:creator": config.author });
+
+                (node.frontmatter.tags || []).forEach(x=> arr.push({"category": x}) );
+
+                return arr;
+              }; 
+
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: customEnt(edge.node),
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date 
+                        tags
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Code 4 IT blog",
+            // optional configuration to insert feed reference in pages:
+            // if `string` is used, it will be used to create RegExp and then test if pathname of
+            // current page satisfied this regular expression;
+            // if not provided or `undefined`, all pages will have feed reference inserted
+            match: "^/blog/",
+          
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
