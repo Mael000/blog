@@ -17,7 +17,7 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: row;
   @media ${media.tablet} {
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 `;
 
@@ -27,11 +27,12 @@ const PostContent = styled.article`
   box-shadow: 2px 4px 20px 1px rgba(0, 0, 0, 0.75);
   margin: 1rem;
   padding: 0.5rem;
-  max-width: 100%;
+  max-width: 60vw;
   @media ${media.tablet} {
     box-shadow: 0;
     margin: 0 0 1rem 0;
     box-shadow: none;
+    max-width: 98vw;
   }
 `;
 

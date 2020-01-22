@@ -111,7 +111,7 @@ export class Layout extends React.PureComponent<{}> {
               {children}
               <Footer>
                 <FooterWrapper>
-                  <span>&copy; {split(data.site.buildTime, '.')[2]} by Davide Bellone</span>
+                  <span>&copy; {split(data.site.buildTime, '-')[0]} by Davide Bellone</span>
                   <span>
                     <a href="https://www.twitter.com/bellonedavide">
                       <TwitterIcon />
