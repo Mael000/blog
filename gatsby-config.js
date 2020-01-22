@@ -13,7 +13,10 @@ module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     siteUrl: config.siteUrl + pathPrefix,
-    mainImage: config.homepageBanner
+    mainImage: config.homepageBanner,
+    description: config.siteDescription,
+    blogPath: config.blogPath,
+
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -32,11 +35,11 @@ module.exports = {
           {
             site {
               siteMetadata {
-               
                 siteUrl
-                mainImage
                 site_url: siteUrl
                 image_url : mainImage
+                description
+                blogPath
               }
             }
           }
@@ -60,8 +63,8 @@ module.exports = {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  url: site.siteMetadata.siteUrl +site.siteMetadata.blogPath+ edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl  +site.siteMetadata.blogPath+ edge.node.fields.slug,
                   custom_elements: customEnt(edge.node),
                 })
               })

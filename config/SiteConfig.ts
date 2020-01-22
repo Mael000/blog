@@ -1,6 +1,6 @@
 export default {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
-
+  blogPath: '/blog/',
   siteTitle: 'Code4IT', // Navigation and Site Title
   siteTitleAlt: 'Code4IT', // Alternative Site title for SEO
   siteUrl: 'https://jolly-roentgen-73c66f.netlify.com/', // Domain of your site. No trailing slash!
