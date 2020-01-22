@@ -35,7 +35,6 @@ interface Props {
   excerpt: string;
   slug: string;
   timeToRead: number;
-  category: string;
   mainImage: string;
   tags: string[];
 }
@@ -59,10 +58,13 @@ const TagsHolder = styled.div`
 
 export class HomepageArticle extends React.PureComponent<Props> {
   public render() {
-    const { title, date, excerpt, slug, timeToRead, category, mainImage, tags } = this.props;
+    const { title, date, excerpt, slug, timeToRead, mainImage, tags } = this.props;
+    const imageFormat = 't_dev-to';
+
+    const image = mainImage?.replace('{format}', imageFormat);
     return (
       <Card>
-        <MainImage src={mainImage} />
+        <MainImage src={image} />
         <div>
           <Title>
             <Link to={`/blog/${slug}`}>{title}</Link>

@@ -57,13 +57,18 @@ export default class PostPage extends React.PureComponent<Props> {
     const post = this.props.data.markdownRemark;
 
     const isFullWidth = isMobile;
+
+    const imageFormat = 't_ww2';
+
+    const image = (post?.frontmatter?.banner || config.defaultArticleBanner).replace('{format}', imageFormat);
+
     return (
       <Layout>
         {post ? (
           <>
             <SEO postPath={post.fields.slug} postNode={post} postSEO />
             <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
-            <Header banner={post.frontmatter.banner}>
+            <Header banner={image}>
               <Link to="/">{config.siteTitle}</Link>
               <SectionTitle>{post.frontmatter.title}</SectionTitle>
               <Subline light={true}>

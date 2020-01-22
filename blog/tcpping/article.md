@@ -3,7 +3,7 @@ date: "2019-11-20"
 title: "How to ping from an Azure App service"
 category: "Misc"
 tags: ['Talks', 'Career']
-banner: "https://res.cloudinary.com/bellons/image/upload/t_ww2/Code4IT/TCPPING/cover_tcpping.jpg"
+banner: "https://res.cloudinary.com/bellons/image/upload/{format}/Code4IT/TCPPING/cover_tcpping.jpg"
 ---
 
 I think you know what __ping__ is: it is a command that you can run on your terminal to see if an host is up and running. 
