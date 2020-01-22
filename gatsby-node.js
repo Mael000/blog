@@ -37,15 +37,15 @@ const getPostsByType = (posts, classificationType) => {
 
 const createClassificationPages = ({ createPage, posts, postsPerPage, numPages }) => {
   const classifications = [
-    {
-      singularName: 'category',
-      pluralName: 'categories',
-      template: {
-        part: path.resolve(`src/templates/Category.tsx`),
-        all: path.resolve(`src/templates/AllCategory.tsx`),
-      },
-      postsByClassificationNames: getPostsByType(posts, 'category'),
-    },
+    // {
+    //   singularName: 'category',
+    //   pluralName: 'categories',
+    //   template: {
+    //     part: path.resolve(`src/templates/Category.tsx`),
+    //     all: path.resolve(`src/templates/AllCategory.tsx`),
+    //   },
+    //   postsByClassificationNames: getPostsByType(posts, 'category'),
+    // },
     {
       singularName: 'tag',
       pluralName: 'tags',

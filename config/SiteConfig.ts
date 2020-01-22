@@ -30,6 +30,9 @@ export default {
   //
   Google_Tag_Manager_ID: 'GTM-XXXXXXX',
   POST_PER_PAGE: 5,
+
+  DateTimeFormat: 'MMMM DD, YYYY',
+
   //
   homepageBanner: 'https://res.cloudinary.com/bellons/image/upload/t_ww2/Code4IT/Performance%20optimization%20csharp/Cover_1_wdpnsq.jpg',
   defaultArticleBanner: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg',

@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import { Subline } from './Subline';
+import moment from 'moment';
+import config from '../../config/SiteConfig';
 
 const Title = styled.h2`
   position: relative;
@@ -69,7 +71,7 @@ export class HomepageArticle extends React.PureComponent<Props> {
             <Excerpt>{excerpt}</Excerpt>
             <div>
               <div>
-                {date} &mdash; {timeToRead} Min Read
+                {moment(date).format(config.DateTimeFormat)} &mdash; {timeToRead} Min Read
               </div>
               <TagsHolder>
                 Tags:

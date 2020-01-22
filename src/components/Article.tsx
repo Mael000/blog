@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import { Subline } from './Subline';
+import moment from 'moment';
+import config from '../../config/SiteConfig';
 
 const Post = styled.article`
   display: flex;
@@ -52,7 +54,7 @@ export class Article extends React.PureComponent<Props> {
           <Link to={`/blog/${slug}`}>{title}</Link>
         </Title>
         <Subline>
-          {date} &mdash; {timeToRead} Min Read
+          {moment(date).format(config.DateTimeFormat)} &mdash; {timeToRead} Min Read
           <TagsHolder>
             Tags:
             {(tags || []).map((tag, i) => (

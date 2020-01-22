@@ -8,6 +8,7 @@ import config from '../../config/SiteConfig';
 import { Article } from '.';
 import { SidebarArticle } from './SidebarArticle';
 import { media } from '../utils/media';
+import moment from 'moment';
 
 const Wrapper = styled.div`
   display: flex;
@@ -40,7 +41,7 @@ export class PrevNext extends React.PureComponent<Props> {
         {prev && (
           <SidebarArticle
             title={prev.frontmatter.title}
-            date={prev.frontmatter.date}
+            date={moment(prev.frontmatter.date).format(config.DateTimeFormat)}
             slug={prev.fields.slug}
             key={prev.fields.slug}
             tags={prev.frontmatter.tags || []}
@@ -49,7 +50,7 @@ export class PrevNext extends React.PureComponent<Props> {
         {next && (
           <SidebarArticle
             title={next.frontmatter.title}
-            date={next.frontmatter.date}
+            date={moment(next.frontmatter.date).format(config.DateTimeFormat)}
             slug={next.fields.slug}
             key={next.fields.slug}
             tags={next.frontmatter.tags || []}

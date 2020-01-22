@@ -11,6 +11,7 @@ import Post from '../models/Post';
 import { MainNavigation } from '../components/MainNavigation';
 import { media } from '../utils/media';
 import { isMobile } from 'react-device-detect';
+import * as moment from 'moment';
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -56,7 +57,6 @@ export default class PostPage extends React.PureComponent<Props> {
     const post = this.props.data.markdownRemark;
 
     const isFullWidth = isMobile;
-
     return (
       <Layout>
         {post ? (
@@ -67,7 +67,7 @@ export default class PostPage extends React.PureComponent<Props> {
               <Link to="/">{config.siteTitle}</Link>
               <SectionTitle>{post.frontmatter.title}</SectionTitle>
               <Subline light={true}>
-                {post.frontmatter.date} &mdash; {post.timeToRead} Min Read
+                {moment(post.frontmatter.date).format(config.DateTimeFormat)} &mdash; {post.timeToRead} Min Read
               </Subline>
             </Header>
             <MainNavigation />
@@ -108,7 +108,7 @@ export const postQuery = graphql`
       excerpt
       frontmatter {
         title
-        date(formatString: "YYYY-MMM-DD")
+        date
         category
         tags
         banner

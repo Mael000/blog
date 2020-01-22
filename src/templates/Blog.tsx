@@ -6,6 +6,7 @@ import config from '../../config/SiteConfig';
 import Data from '../models/Data';
 import { MainNavigation } from '../components/MainNavigation';
 import { formatDistance } from 'date-fns';
+import moment from 'moment';
 interface Props {
   data: Data;
   pageContext: {
@@ -33,7 +34,7 @@ export default class BlogPage extends React.Component<Props> {
             {edges.map(post => (
               <Article
                 title={post.node.frontmatter.title}
-                date={post.node.frontmatter.date}
+                date={moment(post.node.frontmatter.date).format(config.DateTimeFormat)}
                 excerpt={post.node.excerpt}
                 timeToRead={post.node.timeToRead}
                 slug={post.node.fields.slug}
@@ -65,7 +66,7 @@ export const BlogQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "YYYY-MMM-DD")
+            date
             category
             tags
           }
