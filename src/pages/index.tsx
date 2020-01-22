@@ -75,7 +75,7 @@ export const IndexQuery = graphql`
           excerpt
           frontmatter {
             title
-            date(formatString: "DD.MM.YYYY")
+            date(formatString: "YYYY-MMM-DD")
             category
             banner
             tags

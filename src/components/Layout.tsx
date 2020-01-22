@@ -100,7 +100,7 @@ export class Layout extends React.PureComponent<{}> {
         query={graphql`
           query LayoutQuery {
             site {
-              buildTime(formatString: "DD.MM.YYYY")
+              buildTime(formatString: "YYYY-MMM-DD")
             }
           }
         `}

@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
 import Data from '../models/Data';
 import { MainNavigation } from '../components/MainNavigation';
-
+import { formatDistance } from 'date-fns';
 interface Props {
   data: Data;
   pageContext: {
@@ -20,7 +20,6 @@ export default class BlogPage extends React.Component<Props> {
 
     const { data } = this.props;
     const { edges, totalCount } = data.allMarkdownRemark;
-
     return (
       <Layout>
         <Helmet title={`Blog | ${config.siteTitle}`} />
@@ -66,7 +65,7 @@ export const BlogQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "DD.MM.YYYY")
+            date(formatString: "YYYY-MMM-DD")
             category
             tags
           }
