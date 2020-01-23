@@ -21,7 +21,9 @@ export default class MySpeechesPage extends React.Component<PageProps> {
       <Layout>
         <Helmet title={`My speeches | ${config.siteTitle}`} />
         <Header>
-          <Link to="/">{config.siteTitle}</Link>
+          <Link to="/" title="homepage">
+            {config.siteTitle}
+          </Link>
           <SectionTitle>My speeches</SectionTitle>
         </Header>
         <MainNavigation />

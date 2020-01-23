@@ -67,7 +67,9 @@ export class HomepageArticle extends React.PureComponent<Props> {
         <MainImage src={image} />
         <div>
           <Title>
-            <Link to={`/blog/${slug}`}>{title}</Link>
+            <Link to={`/blog/${slug}`} title={title}>
+              {title}
+            </Link>
           </Title>
           <Subline>
             <Excerpt>{excerpt}</Excerpt>
@@ -78,7 +80,7 @@ export class HomepageArticle extends React.PureComponent<Props> {
               <TagsHolder>
                 Tags:
                 {(tags || []).map((tag, i) => (
-                  <Link to={`/tags/${kebabCase(tag)}`} key={`arthp-${slug}-${i}`}>
+                  <Link to={`/tags/${kebabCase(tag)}`} key={`arthp-${slug}-${i}`} title={tag}>
                     {tag}
                   </Link>
                 ))}

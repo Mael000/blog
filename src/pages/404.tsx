@@ -10,7 +10,9 @@ export default class NotFoundPage extends React.Component<any> {
       <Layout>
         <Helmet title={`404 not found | ${config.siteTitle}`} />
         <Header>
-          <Link to="/">{config.siteTitle}</Link>
+          <Link to="/" title="homepage">
+            {config.siteTitle}
+          </Link>
           <SectionTitle>NOT FOUND</SectionTitle>
         </Header>
         <Wrapper>
