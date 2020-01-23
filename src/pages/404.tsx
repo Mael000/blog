@@ -3,6 +3,17 @@ import { Content, Header, Layout, Wrapper, SectionTitle } from '../components';
 import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
+
+export const MessageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-size: 100px;
+  }
+`;
 
 export default class NotFoundPage extends React.Component<any> {
   public render() {
@@ -13,11 +24,15 @@ export default class NotFoundPage extends React.Component<any> {
           <Link to="/" title="homepage">
             {config.siteTitle}
           </Link>
-          <SectionTitle>NOT FOUND</SectionTitle>
+          <SectionTitle> PAGE NOT FOUND</SectionTitle>
         </Header>
         <Wrapper>
           <Content>
-            <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+            <MessageWrapper>
+              <h2>404</h2>
+              <p>Oh... The content you are looking for is not here! </p>
+              <img src="https://media.giphy.com/media/VfyC5j7sR4cso/source.gif" alt="not found" />
+            </MessageWrapper>
           </Content>
         </Wrapper>
       </Layout>
