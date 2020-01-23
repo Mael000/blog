@@ -25,7 +25,9 @@ export default class BlogPage extends React.Component<Props> {
       <Layout>
         <Helmet title={`Blog | ${config.siteTitle}`} />
         <Header>
-          <Link to="/">{config.siteTitle}</Link>
+          <Link to="/" title="homepage">
+            {config.siteTitle}
+          </Link>
           <SectionTitle>Latest articles ({totalCount})</SectionTitle>
         </Header>
         <MainNavigation />

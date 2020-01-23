@@ -31,7 +31,9 @@ export default class ContactPage extends React.Component<PageProps> {
       <Layout>
         <Helmet title={`Contact | ${config.siteTitle}`} />
         <Header>
-          <Link to="/">{config.siteTitle}</Link>
+          <Link to="/" title="homepage">
+            {config.siteTitle}
+          </Link>
           <SectionTitle>Contact</SectionTitle>
         </Header>
         <MainNavigation />

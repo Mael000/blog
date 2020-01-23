@@ -51,14 +51,16 @@ export class Article extends React.PureComponent<Props> {
     return (
       <Post>
         <Title>
-          <Link to={`/blog/${slug}`}>{title}</Link>
+          <Link to={`/blog/${slug}`} title={title}>
+            {title}
+          </Link>
         </Title>
         <Subline>
           {moment(date).format(config.DateTimeFormat)} &mdash; {timeToRead} Min Read
           <TagsHolder>
             Tags:
             {(tags || []).map((tag, i) => (
-              <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`}>
+              <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`} title={tag}>
                 {tag}
               </Link>
             ))}

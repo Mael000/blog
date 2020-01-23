@@ -70,7 +70,9 @@ export default class PostPage extends React.PureComponent<Props> {
             <SEO postPath={post.fields.slug} postNode={post} postSEO />
             <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
             <Header banner={image}>
-              <Link to="/">{config.siteTitle}</Link>
+              <Link to="/" title="homepage">
+                {config.siteTitle}
+              </Link>
               <SectionTitle>{post.frontmatter.title}</SectionTitle>
               <Subline light={true}>
                 {moment(post.frontmatter.date).format(config.DateTimeFormat)} &mdash; {post.timeToRead} Min Read
@@ -86,7 +88,7 @@ export default class PostPage extends React.PureComponent<Props> {
                       <Subline>
                         Tags: &#160;
                         {post.frontmatter.tags.map((tag, i) => (
-                          <Link key={i} to={`/tags/${kebabCase(tag)}`}>
+                          <Link key={i} to={`/tags/${kebabCase(tag)}`} title={tag}>
                             <strong>{tag}</strong> {i < post.frontmatter.tags.length - 1 ? `, ` : ``}
                           </Link>
                         ))}

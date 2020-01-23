@@ -98,7 +98,7 @@ export class Pagination extends React.PureComponent<Props> {
       <PaginationContainer>
         <PaginationContent>
           {!isFirst && (
-            <Link className="prev page-numbers" to={prevPage} rel="prev">
+            <Link className="prev page-numbers" to={prevPage} rel="prev" title="previous page">
               ← Prev
             </Link>
           )}
@@ -112,7 +112,7 @@ export class Pagination extends React.PureComponent<Props> {
             </Link>
           ))}
           {!isLast && (
-            <Link className="next page-numbers" to={nextPage} rel="next">
+            <Link className="next page-numbers" to={nextPage} rel="next" title="next page">
               Next →
             </Link>
           )}
