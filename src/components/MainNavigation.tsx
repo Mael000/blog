@@ -13,7 +13,6 @@ export const Nav = styled.nav`
 `;
 
 export const NavItem = styled.div`
-  //border: solid 1px transparent;
   flex: 1;
   text-align: center;
 
