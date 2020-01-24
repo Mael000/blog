@@ -28,7 +28,7 @@ export default {
   siteFBAppID: '',
 
   //
-  Google_Tag_Manager_ID: 'GTM-XXXXXXX',
+  Google_Tag_Manager_ID: 'GTM-W6KBN79',
   POST_PER_PAGE: 5,
 
   DateTimeFormat: 'MMMM DD, YYYY',
