@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import curriedDarken from 'polished/lib/color/darken';
 
 export const Button: any = styled.button`
-
-
   background: ${props => props.theme.colors.primary};
   border: none;
   display: inline-flex;

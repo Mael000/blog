@@ -37,15 +37,6 @@ const getPostsByType = (posts, classificationType) => {
 
 const createClassificationPages = ({ createPage, posts, postsPerPage, numPages }) => {
   const classifications = [
-    // {
-    //   singularName: 'category',
-    //   pluralName: 'categories',
-    //   template: {
-    //     part: path.resolve(`src/templates/Category.tsx`),
-    //     all: path.resolve(`src/templates/AllCategory.tsx`),
-    //   },
-    //   postsByClassificationNames: getPostsByType(posts, 'category'),
-    // },
     {
       singularName: 'tag',
       pluralName: 'tags',
@@ -151,14 +142,14 @@ exports.createPages = ({ actions, graphql }) => {
       const prev = index === posts.length - 1 ? null : posts[index + 1].node;
 
       createPage({
-                   path: `/blog/${_.kebabCase(node.frontmatter.title)}`,
-                   component: postTemplate,
-                   context: {
-                     slug: _.kebabCase(node.frontmatter.title),
-                     prev,
-                     next,
-                   },
-                 });
+        path: `/blog/${_.kebabCase(node.frontmatter.title)}`,
+        component: postTemplate,
+        context: {
+          slug: _.kebabCase(node.frontmatter.title),
+          prev,
+          next,
+        },
+      });
     });
   });
 };
