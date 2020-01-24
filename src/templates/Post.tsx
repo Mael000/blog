@@ -12,7 +12,7 @@ import { MainNavigation } from '../components/MainNavigation';
 import { media } from '../utils/media';
 import { isMobile } from 'react-device-detect';
 import * as moment from 'moment';
-import { ShareButton } from '../components/ShareButton';
+import { ShareButton, ShareButtons } from '../components/ShareButtons';
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -38,7 +38,7 @@ const PostContent = styled.article`
 `;
 
 const PostSidebar = styled.div`
-  margin-top: 4rem;
+  margin-top: 2rem;
   flex: 1;
   padding: 0.5rem;
   @media ${media.tablet} {
@@ -85,9 +85,6 @@ export default class PostPage extends React.PureComponent<Props> {
                 <ContentWrapper>
                   <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
                   <PostSidebar>
-                    <ShareButton title={post.frontmatter.title} slug={kebabCase(post.frontmatter.title)} target="LinkedIn" />
-                    <ShareButton title={post.frontmatter.title} slug={kebabCase(post.frontmatter.title)} target="Twitter" onlyIcon />
-
                     {post.frontmatter.tags ? (
                       <Subline>
                         Tags: &#160;
@@ -98,6 +95,8 @@ export default class PostPage extends React.PureComponent<Props> {
                         ))}
                       </Subline>
                     ) : null}
+                    <ShareButtons post={post} />
+
                     <PrevNext prev={prev} next={next} />
                   </PostSidebar>
                 </ContentWrapper>
