@@ -5,7 +5,8 @@ import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
 import Data from '../models/Data';
 import { MainNavigation } from '../components/MainNavigation';
-
+import { formatDistance } from 'date-fns';
+import moment from 'moment';
 interface Props {
   data: Data;
   pageContext: {
@@ -20,12 +21,13 @@ export default class BlogPage extends React.Component<Props> {
 
     const { data } = this.props;
     const { edges, totalCount } = data.allMarkdownRemark;
-
     return (
       <Layout>
         <Helmet title={`Blog | ${config.siteTitle}`} />
         <Header>
-          <Link to="/">{config.siteTitle}</Link>
+          <Link to="/" title="homepage">
+            {config.siteTitle}
+          </Link>
           <SectionTitle>Latest articles ({totalCount})</SectionTitle>
         </Header>
         <MainNavigation />
@@ -34,11 +36,10 @@ export default class BlogPage extends React.Component<Props> {
             {edges.map(post => (
               <Article
                 title={post.node.frontmatter.title}
-                date={post.node.frontmatter.date}
+                date={moment(post.node.frontmatter.date).format(config.DateTimeFormat)}
                 excerpt={post.node.excerpt}
                 timeToRead={post.node.timeToRead}
                 slug={post.node.fields.slug}
-                category={post.node.frontmatter.category}
                 key={post.node.fields.slug}
                 tags={post.node.frontmatter.tags || []}
               />
@@ -66,7 +67,7 @@ export const BlogQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "DD.MM.YYYY")
+            date
             category
             tags
           }

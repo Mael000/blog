@@ -11,12 +11,14 @@ import Post from '../models/Post';
 import { MainNavigation } from '../components/MainNavigation';
 import { media } from '../utils/media';
 import { isMobile } from 'react-device-detect';
+import * as moment from 'moment';
+import { ShareButton, ShareButtons } from '../components/ShareButtons';
 
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: row;
   @media ${media.tablet} {
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 `;
 
@@ -26,16 +28,17 @@ const PostContent = styled.article`
   box-shadow: 2px 4px 20px 1px rgba(0, 0, 0, 0.75);
   margin: 1rem;
   padding: 0.5rem;
-  max-width: 100%;
+  max-width: 60vw;
   @media ${media.tablet} {
     box-shadow: 0;
     margin: 0 0 1rem 0;
     box-shadow: none;
+    max-width: 98vw;
   }
 `;
 
 const PostSidebar = styled.div`
-  margin-top: 4rem;
+  margin-top: 2rem;
   flex: 1;
   padding: 0.5rem;
   @media ${media.tablet} {
@@ -57,17 +60,23 @@ export default class PostPage extends React.PureComponent<Props> {
 
     const isFullWidth = isMobile;
 
+    const imageFormat = 't_ww2';
+
+    const image = (post?.frontmatter?.banner || config.defaultArticleBanner).replace('{format}', imageFormat);
+
     return (
       <Layout>
         {post ? (
           <>
             <SEO postPath={post.fields.slug} postNode={post} postSEO />
             <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
-            <Header banner={post.frontmatter.banner}>
-              <Link to="/">{config.siteTitle}</Link>
+            <Header banner={image}>
+              <Link to="/" title="homepage">
+                {config.siteTitle}
+              </Link>
               <SectionTitle>{post.frontmatter.title}</SectionTitle>
               <Subline light={true}>
-                {post.frontmatter.date} &mdash; {post.timeToRead} Min Read
+                {moment(post.frontmatter.date).format(config.DateTimeFormat)} &mdash; {post.timeToRead} Min Read
               </Subline>
             </Header>
             <MainNavigation />
@@ -80,12 +89,14 @@ export default class PostPage extends React.PureComponent<Props> {
                       <Subline>
                         Tags: &#160;
                         {post.frontmatter.tags.map((tag, i) => (
-                          <Link key={i} to={`/tags/${kebabCase(tag)}`}>
+                          <Link key={i} to={`/tags/${kebabCase(tag)}`} title={tag}>
                             <strong>{tag}</strong> {i < post.frontmatter.tags.length - 1 ? `, ` : ``}
                           </Link>
                         ))}
                       </Subline>
                     ) : null}
+                    <ShareButtons post={post} />
+
                     <PrevNext prev={prev} next={next} />
                   </PostSidebar>
                 </ContentWrapper>
@@ -108,7 +119,7 @@ export const postQuery = graphql`
       excerpt
       frontmatter {
         title
-        date(formatString: "DD.MM.YYYY")
+        date
         category
         tags
         banner

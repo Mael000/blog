@@ -16,7 +16,9 @@ export default class AllTagTemplate extends React.PureComponent<PageProps> {
         <Layout>
           <Helmet title={`Tags | ${config.siteTitle}`} />
           <Header>
-            <Link to="/">{config.siteTitle}</Link>
+            <Link to="/" title="homepage">
+              {config.siteTitle}
+            </Link>
             <SectionTitle>Tags</SectionTitle>
           </Header>
           <MainNavigation />
@@ -24,7 +26,9 @@ export default class AllTagTemplate extends React.PureComponent<PageProps> {
             <Content>
               {tags.map((tag, index: number) => (
                 <Title key={index}>
-                  <Link to={`/tags/${kebabCase(tag)}`}>{tag}</Link>
+                  <Link to={`/tags/${kebabCase(tag)}`} title={tag}>
+                    {tag}
+                  </Link>
                 </Title>
               ))}
             </Content>

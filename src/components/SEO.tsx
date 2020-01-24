@@ -17,16 +17,19 @@ export const SEO = (props: SEO) => {
   let image;
   let postURL;
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
+
+  const siteImage = config.siteBanner.replace('{format}', '');
+
   if (postSEO) {
     const postMeta = postNode.frontmatter;
     title = postMeta.title;
     description = postNode.excerpt;
-    image = config.siteBanner;
+    image = siteImage;
     postURL = config.siteUrl + realPrefix + postPath;
   } else {
     title = config.siteTitle;
     description = config.siteDescription;
-    image = config.siteBanner;
+    image = siteImage;
   }
   image = config.siteUrl + realPrefix + image;
   const blogURL = config.siteUrl + config.pathPrefix;

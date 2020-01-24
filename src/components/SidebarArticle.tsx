@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import { Subline } from './Subline';
+import moment from 'moment';
+import config from '../../config/SiteConfig';
 
 const Post = styled.div`
   display: flex;
@@ -42,14 +44,16 @@ export class SidebarArticle extends React.PureComponent<Props> {
     return (
       <Post>
         <Title>
-          <Link to={`/blog/${slug}`}>{title}</Link>
+          <Link to={`/blog/${slug}`} title={title}>
+            {title}
+          </Link>
         </Title>
         <Subline>
-          {date}
+          {moment(date).format(config.DateTimeFormat)}
           <TagsHolder>
             Tags:
             {(tags || []).map((tag, i) => (
-              <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`}>
+              <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`} title={tag}>
                 {tag}
               </Link>
             ))}

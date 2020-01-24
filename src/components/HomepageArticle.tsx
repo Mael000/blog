@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import { Subline } from './Subline';
+import moment from 'moment';
+import config from '../../config/SiteConfig';
 
 const Title = styled.h2`
   position: relative;
@@ -33,7 +35,6 @@ interface Props {
   excerpt: string;
   slug: string;
   timeToRead: number;
-  category: string;
   mainImage: string;
   tags: string[];
 }
@@ -57,24 +58,29 @@ const TagsHolder = styled.div`
 
 export class HomepageArticle extends React.PureComponent<Props> {
   public render() {
-    const { title, date, excerpt, slug, timeToRead, category, mainImage, tags } = this.props;
+    const { title, date, excerpt, slug, timeToRead, mainImage, tags } = this.props;
+    const imageFormat = 't_dev-to';
+
+    const image = mainImage?.replace('{format}', imageFormat);
     return (
       <Card>
-        <MainImage src={mainImage} />
+        <MainImage src={image} />
         <div>
           <Title>
-            <Link to={`/blog/${slug}`}>{title}</Link>
+            <Link to={`/blog/${slug}`} title={title}>
+              {title}
+            </Link>
           </Title>
           <Subline>
             <Excerpt>{excerpt}</Excerpt>
             <div>
               <div>
-                {date} &mdash; {timeToRead} Min Read
+                {moment(date).format(config.DateTimeFormat)} &mdash; {timeToRead} Min Read
               </div>
               <TagsHolder>
                 Tags:
                 {(tags || []).map((tag, i) => (
-                  <Link to={`/tags/${kebabCase(tag)}`} key={`arthp-${slug}-${i}`}>
+                  <Link to={`/tags/${kebabCase(tag)}`} key={`arthp-${slug}-${i}`} title={tag}>
                     {tag}
                   </Link>
                 ))}

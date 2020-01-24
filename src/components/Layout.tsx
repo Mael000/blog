@@ -5,10 +5,12 @@ import theme from '../../config/Theme';
 import { media } from '../utils/media';
 import split from 'lodash/split';
 import './layout.scss';
+import { Button } from '.';
+import { TwitterIcon, LinkedInIcon } from './Icons';
 
 const GlobalStyle = createGlobalStyle`
   ::selection {
-    color: ${theme.colors.bg};
+    color: ${theme.colors.white};
     background: ${theme.colors.primary};
   }
   body {
@@ -62,9 +64,30 @@ const GlobalStyle = createGlobalStyle`
 
 const Footer = styled.footer`
   text-align: center;
-  padding: 3rem 0;
+  padding: 1.5rem 0;
+  background-color: #000000b3;
+  color: white;
+
   span {
     font-size: 0.75rem;
+  }
+`;
+
+const FooterWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row;
+  flex-wrap: wrap;
+  span {
+    min-width: 10rem;
+  }
+
+  a {
+    margin: 0 1rem;
+  }
+
+  svg {
+    fill: white;
   }
 `;
 
@@ -77,7 +100,7 @@ export class Layout extends React.PureComponent<{}> {
         query={graphql`
           query LayoutQuery {
             site {
-              buildTime(formatString: "DD.MM.YYYY")
+              buildTime(formatString: "YYYY-MMM-DD")
             }
           }
         `}
@@ -87,9 +110,17 @@ export class Layout extends React.PureComponent<{}> {
               <GlobalStyle />
               {children}
               <Footer>
-                &copy; {split(data.site.buildTime, '.')[2]} by Davide Bellone
-                <br />
-                <span>Last build: {data.site.buildTime}</span>
+                <FooterWrapper>
+                  <span>&copy; {split(data.site.buildTime, '-')[0]} by Davide Bellone</span>
+                  <span>
+                    <a href="https://www.twitter.com/bellonedavide">
+                      <TwitterIcon />
+                    </a>
+                    <a href="https://www.linkedin.com/in/davide-bellone">
+                      <LinkedInIcon />
+                    </a>
+                  </span>
+                </FooterWrapper>
               </Footer>
             </React.Fragment>
           </ThemeProvider>

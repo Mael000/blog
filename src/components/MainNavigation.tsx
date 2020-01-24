@@ -13,7 +13,6 @@ export const Nav = styled.nav`
 `;
 
 export const NavItem = styled.div`
-  //border: solid 1px transparent;
   flex: 1;
   text-align: center;
 
@@ -28,13 +27,19 @@ export class MainNavigation extends React.PureComponent<Props> {
     return (
       <Nav>
         <NavItem>
-          <Link to={'/blog'}>All articles </Link>
+          <Link to={'/blog'} title="blog">
+            All articles{' '}
+          </Link>
         </NavItem>
         <NavItem>
-          <Link to={'/my-speeches'}>My speeches</Link>{' '}
+          <Link to={'/my-speeches'} title="my speeches">
+            My speeches
+          </Link>{' '}
         </NavItem>
         <NavItem>
-          <Link to={'/contact'}>About me and this site</Link>
+          <Link to={'/contact'} title="about me">
+            About me
+          </Link>
         </NavItem>
       </Nav>
     );
