@@ -26,8 +26,14 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-manifest',
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-lodash',
+
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        exclude: [ `/post-schedule`],
+
+      }
+    }, 'gatsby-plugin-lodash',
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -49,22 +55,22 @@ module.exports = {
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
 
-              const customEnt = function(node){
+              const customEnt = function (node) {
                 var arr = [];
                 arr.push({ "content:encoded": node.html });
                 arr.push({ "dc:creator": config.author });
 
-                (node.frontmatter.tags || []).forEach(x=> arr.push({"category": x}) );
+                (node.frontmatter.tags || []).forEach(x => arr.push({ "category": x }));
 
                 return arr;
-              }; 
+              };
 
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl +site.siteMetadata.blogPath+ edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl  +site.siteMetadata.blogPath+ edge.node.fields.slug,
+                  url: site.siteMetadata.siteUrl + site.siteMetadata.blogPath + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + site.siteMetadata.blogPath + edge.node.fields.slug,
                   custom_elements: customEnt(edge.node),
                 })
               })
@@ -96,7 +102,7 @@ module.exports = {
             // current page satisfied this regular expression;
             // if not provided or `undefined`, all pages will have feed reference inserted
             match: "^/blog/",
-          
+
           },
         ],
       },

@@ -1,5 +1,5 @@
 ---
-date: "2019-01-10"
+date: "2022-01-10"
 title: "How to search for videos in a channel with .NET Core 3"
 category: "C#"
 tags: ['C#', '.NET Core', 'YouTube']

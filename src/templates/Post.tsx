@@ -11,7 +11,7 @@ import Post from '../models/Post';
 import { MainNavigation } from '../components/MainNavigation';
 import { media } from '../utils/media';
 import { isMobile } from 'react-device-detect';
-import * as moment from 'moment';
+import moment from 'moment';
 import { ShareButton, ShareButtons } from '../components/ShareButtons';
 
 const ContentWrapper = styled.div`
