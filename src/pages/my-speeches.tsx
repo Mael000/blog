@@ -17,10 +17,11 @@ export const SpeechSession = styled.section`
 
 export default class MySpeechesPage extends React.Component<PageProps> {
   public render() {
+    const img = config.mySpeechPageBanner;
     return (
       <Layout>
         <Helmet title={`My speeches | ${config.siteTitle}`} />
-        <Header>
+        <Header banner={img}>
           <Link to="/" title="homepage">
             {config.siteTitle}
           </Link>
@@ -46,9 +47,8 @@ export default class MySpeechesPage extends React.Component<PageProps> {
               <div>
                 <iframe
                   src="https://www.youtube.com/embed/hSCwzEm4M1A"
-                  frameborder="0"
                   allow=" autoplay; encrypted-media; picture-in-picture"
-                  allowfullscreen
+                  allowFullScreen
                 />
               </div>
             </SpeechSession>

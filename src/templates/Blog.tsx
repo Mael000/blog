@@ -21,10 +21,12 @@ export default class BlogPage extends React.Component<Props> {
 
     const { data } = this.props;
     const { edges, totalCount } = data.allMarkdownRemark;
+    const img = config.latestArticlePageBanner;
+
     return (
       <Layout>
         <Helmet title={`Blog | ${config.siteTitle}`} />
-        <Header>
+        <Header banner={img}>
           <Link to="/" title="homepage">
             {config.siteTitle}
           </Link>

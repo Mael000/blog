@@ -38,10 +38,12 @@ export const Bio = styled.section`
 
 export default class ContactPage extends React.Component<PageProps> {
   public render() {
+    const img = config.aboutMePageBanner;
+
     return (
       <Layout>
         <Helmet title={`Contact | ${config.siteTitle}`} />
-        <Header>
+        <Header banner={img}>
           <Link to="/" title="homepage">
             {config.siteTitle}
           </Link>

@@ -36,4 +36,7 @@ export default {
   //
   homepageBanner: 'https://res.cloudinary.com/bellons/image/upload/t_ww2/Code4IT/Performance%20optimization%20csharp/Cover_1_wdpnsq.jpg',
   defaultArticleBanner: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg',
+  mySpeechPageBanner: '/assets/bg/1.jpg',
+  aboutMePageBanner: '/assets/bg/2.jpg',
+  latestArticlePageBanner: '/assets/bg/3.jpg',
 };
