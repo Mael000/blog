@@ -23,6 +23,10 @@ const HomepageContent: any = styled.div`
   justify-content: center;
 `;
 
+const HomePageTitle = styled.h2`
+  text-align: center;
+`;
+
 export default class IndexPage extends React.Component<PageProps> {
   public render() {
     const { data } = this.props;
@@ -39,7 +43,7 @@ export default class IndexPage extends React.Component<PageProps> {
             <MainNavigation />
             <Wrapper fullWidth="true">
               <Content>
-                <h1> Latest articles </h1>
+                <HomePageTitle> Latest articles </HomePageTitle>
                 <HomepageContent>
                   {edges.map(post => (
                     <HomepageArticle

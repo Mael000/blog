@@ -24,7 +24,7 @@ export const SEO = (props: SEO) => {
     const postMeta = postNode.frontmatter;
     title = postMeta.title;
     description = postNode.excerpt;
-    image = siteImage;
+    image = postNode.frontmatter?.banner?.replace('{format}', '') ?? config.defaultArticleBanner;
     postURL = config.siteUrl + realPrefix + postPath;
   } else {
     title = config.siteTitle;
