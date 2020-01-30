@@ -5,6 +5,7 @@ interface Frontmatter {
   tags: string[];
   banner?: string;
   excerpt: string;
+  slug?: string;
 }
 
 export default Frontmatter;

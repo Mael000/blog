@@ -11,7 +11,7 @@ import Post from '../models/Post';
 import { MainNavigation } from '../components/MainNavigation';
 import { media } from '../utils/media';
 import { isMobile } from 'react-device-detect';
-import * as moment from 'moment';
+import moment from 'moment';
 import { ShareButton, ShareButtons } from '../components/ShareButtons';
 
 const ContentWrapper = styled.div`
@@ -68,7 +68,7 @@ export default class PostPage extends React.PureComponent<Props> {
       <Layout>
         {post ? (
           <>
-            <SEO postPath={post.fields.slug} postNode={post} postSEO />
+            <SEO postPath={post.frontmatter.slug || post.fields.slug} postNode={post} postSEO />
             <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
             <Header banner={image}>
               <Link to="/" title="homepage">
@@ -123,6 +123,7 @@ export const postQuery = graphql`
         category
         tags
         banner
+        slug
       }
       timeToRead
     }

@@ -26,8 +26,9 @@ export interface Props {
 export class ShareButtons extends React.PureComponent<Props> {
   public render() {
     const { post } = this.props;
+    const slug = post.frontmatter.slug || kebabCase(post.frontmatter.title);
 
-    const fullUrl = this.componeUrl(SiteConfig.siteUrl, SiteConfig.blogPath, kebabCase(post.frontmatter.title));
+    const fullUrl = this.componeUrl(SiteConfig.siteUrl, SiteConfig.blogPath, slug);
     // https://www.npmjs.com/package/react-share
     return (
       <ShareButtonsList>

@@ -4,7 +4,7 @@ title: "A recap of my 30ArticlesForNovember"
 category: "Misc"
 tags: ['C#', '.NET', 'Programming']
 excerpt: 'Descrizione 30 aerticles'
-
+slug: '30articlesfornovember-a-recap'
 ---
 
 For this November I decided to share each day an article on Twitter.

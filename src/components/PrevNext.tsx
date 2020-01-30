@@ -42,8 +42,8 @@ export class PrevNext extends React.PureComponent<Props> {
           <SidebarArticle
             title={prev.frontmatter.title}
             date={moment(prev.frontmatter.date).format(config.DateTimeFormat)}
-            slug={prev.fields.slug}
-            key={prev.fields.slug}
+            slug={prev.frontmatter.slug || prev.fields.slug}
+            key={prev.frontmatter.slug || prev.fields.slug}
             tags={prev.frontmatter.tags || []}
           />
         )}
@@ -51,8 +51,8 @@ export class PrevNext extends React.PureComponent<Props> {
           <SidebarArticle
             title={next.frontmatter.title}
             date={moment(next.frontmatter.date).format(config.DateTimeFormat)}
-            slug={next.fields.slug}
-            key={next.fields.slug}
+            slug={next.frontmatter.slug || next.fields.slug}
+            key={next.frontmatter.slug || next.fields.slug}
             tags={next.frontmatter.tags || []}
           />
         )}
