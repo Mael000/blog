@@ -8,10 +8,13 @@ interface SEO {
   postNode: Post;
   postPath: string;
   postSEO: boolean;
+  pageTitle?: string;
+  pageDescription?: string;
+  pageImage?: string;
 }
 
 export const SEO = (props: SEO) => {
-  const { postNode, postPath, postSEO } = props;
+  const { postNode, postPath, postSEO, pageTitle, pageDescription, pageImage } = props;
   let title;
   let description;
   let image;
@@ -27,9 +30,9 @@ export const SEO = (props: SEO) => {
     image = postNode.frontmatter?.banner?.replace('{format}', '') ?? config.defaultArticleBanner;
     postURL = config.siteUrl + realPrefix + postPath;
   } else {
-    title = config.siteTitle;
-    description = config.siteDescription;
-    image = siteImage;
+    title = pageTitle || config.siteTitle;
+    description = pageDescription || config.siteDescription;
+    image = pageImage?.replace('{format}', '') || siteImage;
   }
   image = config.siteUrl + realPrefix + image;
   const blogURL = config.siteUrl + config.pathPrefix;
@@ -85,7 +88,7 @@ export const SEO = (props: SEO) => {
   return (
     <Helmet>
       <html lang={config.siteLanguage} />
-      <title>{config.siteTitle}</title>
+      <title>{pageTitle}</title>
       <meta name="description" content={description} />
       <meta name="image" content={image} />
       <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>

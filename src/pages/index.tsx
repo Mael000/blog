@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Layout, Wrapper, Button, Article, Header, Content, SectionTitle } from '../components';
+import { Layout, Wrapper, Button, Article, Header, Content, SectionTitle, SEO } from '../components';
 import PageProps from '../models/PageProps';
 import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
@@ -31,12 +31,19 @@ export default class IndexPage extends React.Component<PageProps> {
   public render() {
     const { data } = this.props;
     const { edges, totalCount } = data.allMarkdownRemark;
+    const bannerImage = config.homepageBanner;
+
     return (
       <Layout>
         <Wrapper fullWidth={true}>
-          <Helmet title={`Homepage | ${config.siteTitle}`} />
+          <SEO
+            pageTitle={`Homepage | ${config.siteTitle} | ${config.siteDescription}`}
+            pageDescription="Davide Bellone is a software developer based on Turin, Italy. He spent most of his work life working on Microsoft environment, beginning with the first job as a SharePoint developer, moving to MVC 5, Rest API + Angular and finally to a full backend role."
+            pageImage={bannerImage}
+          />
+
           <Homepage>
-            <Header banner={config.homepageBanner}>
+            <Header banner={bannerImage}>
               <SectionTitle>{config.siteTitle}</SectionTitle>
               <p>{config.siteDescription}</p>
             </Header>
