@@ -48,3 +48,13 @@ $easing: ease;
   margin-left: 4px;
   padding: 0 5px;
 }
+
+article figure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  figcaption{
+    text-decoration: underline;
+  }
+}

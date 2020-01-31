@@ -59,7 +59,7 @@ const TagsHolder = styled.div`
 export class HomepageArticle extends React.PureComponent<Props> {
   public render() {
     const { title, date, excerpt, slug, timeToRead, mainImage, tags } = this.props;
-    const imageFormat = 't_dev-to';
+    const imageFormat = 't_code4it_homepage_article';
 
     const image = mainImage?.replace('{format}', imageFormat);
     return (
