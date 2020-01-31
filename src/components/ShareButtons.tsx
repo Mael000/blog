@@ -17,6 +17,9 @@ export const ShareButtonsList = styled.section`
       }
     }
   }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export interface Props {

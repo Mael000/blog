@@ -36,12 +36,12 @@ interface Props {
 }
 
 const TagsHolder = styled.div`
-  a:after {
-    content: ', ';
-  }
-  a:last-child:after {
-    content: '';
-  }
+  //   a:after {
+  //     content: ', ';
+  //   }
+  //   a:last-child:after {
+  //     content: '';
+  //   }
 `;
 
 export class Article extends React.PureComponent<Props> {
@@ -60,7 +60,7 @@ export class Article extends React.PureComponent<Props> {
           <TagsHolder>
             Tags:
             {(tags || []).map((tag, i) => (
-              <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`} title={tag}>
+              <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`} title={tag} className="tag">
                 {tag}
               </Link>
             ))}

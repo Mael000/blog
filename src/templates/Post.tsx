@@ -37,13 +37,19 @@ const PostContent = styled.article`
   }
 `;
 
-const PostSidebar = styled.div`
+const PostSidebar = styled.aside`
   margin-top: 2rem;
   flex: 1;
   padding: 0.5rem;
   @media ${media.tablet} {
     margin-top: 0;
   }
+`;
+
+const TagsHolder = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `;
 
 interface Props {
@@ -86,14 +92,13 @@ export default class PostPage extends React.PureComponent<Props> {
                   <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
                   <PostSidebar>
                     {post.frontmatter.tags ? (
-                      <Subline>
-                        Tags: &#160;
+                      <TagsHolder>
                         {post.frontmatter.tags.map((tag, i) => (
-                          <Link key={i} to={`/tags/${kebabCase(tag)}`} title={tag}>
-                            <strong>{tag}</strong> {i < post.frontmatter.tags.length - 1 ? `, ` : ``}
+                          <Link key={i} to={`/tags/${kebabCase(tag)}`} title={tag} className="tag">
+                            <strong>{tag}</strong>
                           </Link>
                         ))}
-                      </Subline>
+                      </TagsHolder>
                     ) : null}
                     <ShareButtons post={post} />
 
