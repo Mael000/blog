@@ -11,12 +11,7 @@ I think you know what __ping__ is: it is a command that you can run on your term
 
 It works by sending some packets to the host and waiting for a response, and it measures the round-trip time that the message takes to go to the host and come back to the client.
 
-<figure>
-    <img src="https://media.giphy.com/media/g8A6kKFew4w0w/giphy.gif"
-         alt="A round trip example">
-    <figcaption>A round trip example</figcaption>
-</figure>
- 
+![A round trip example](https://media.giphy.com/media/g8A6kKFew4w0w/giphy.gif)
 
 An example can be 
 
