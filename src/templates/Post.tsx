@@ -50,6 +50,7 @@ const TagsHolder = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
 `;
 
 interface Props {
