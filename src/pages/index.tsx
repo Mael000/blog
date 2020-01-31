@@ -38,7 +38,7 @@ export default class IndexPage extends React.Component<PageProps> {
         <Wrapper fullWidth={true}>
           <SEO
             pageTitle={`Homepage | ${config.siteTitle} | ${config.siteDescription}`}
-            pageDescription="Davide Bellone is a software developer based on Turin, Italy. He spent most of his work life working on Microsoft environment, beginning with the first job as a SharePoint developer, moving to MVC 5, Rest API + Angular and finally to a full backend role."
+            pageDescription="Davide Bellone is a software developer based on Turin, Italy. Microsoft lover, but cheated on it with Angular."
             pageImage={bannerImage}
           />
 
