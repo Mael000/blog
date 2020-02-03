@@ -71,6 +71,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/react-fontawesome": "^0.1.8",
     "gatsby": "^2.18.23",
+    "gatsby-plugin-disqus": "^1.1.4",
     "gatsby-plugin-draft": "0.0.5",
     "gatsby-plugin-feed": "^2.3.26",
     "gatsby-plugin-google-tagmanager": "^2.0.5",

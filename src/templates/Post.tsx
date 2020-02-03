@@ -13,6 +13,7 @@ import { media } from '../utils/media';
 import { isMobile } from 'react-device-detect';
 import moment from 'moment';
 import { ShareButton, ShareButtons } from '../components/ShareButtons';
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -71,6 +72,12 @@ export default class PostPage extends React.PureComponent<Props> {
 
     const image = (post?.frontmatter?.banner || config.defaultArticleBanner).replace('{format}', imageFormat);
 
+    const disqusConfig = {
+      url: `${config.siteUrl + location.pathname}`,
+      identifier: post.id,
+      title: post.title,
+    };
+
     return (
       <Layout>
         {post ? (
@@ -106,6 +113,7 @@ export default class PostPage extends React.PureComponent<Props> {
                     <PrevNext prev={prev} next={next} />
                   </PostSidebar>
                 </ContentWrapper>
+                <Disqus config={disqusConfig} />
               </Content>
             </Wrapper>
           </>
