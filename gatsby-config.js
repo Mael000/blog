@@ -26,7 +26,12 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-manifest',
     'gatsby-plugin-catch-links',
-
+{
+  resolve: `gatsby-plugin-disqus`,
+  options: {
+    shortname: `code4it`
+  }
+},
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
