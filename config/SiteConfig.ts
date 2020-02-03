@@ -3,7 +3,7 @@ export default {
   blogPath: '/blog/',
   siteTitle: 'Code4IT', // Navigation and Site Title
   siteTitleAlt: 'Code4IT', // Alternative Site title for SEO
-  siteUrl: 'https://jolly-roentgen-73c66f.netlify.com/', // Domain of your site. No trailing slash!
+  siteUrl: 'https://www.code4it.dev', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteBanner: '/assets/banner.jpg', // Your image for og:image tag. You can find it in the /static folder
   defaultBg: '/assets/bg.png', // default post background header
@@ -11,6 +11,10 @@ export default {
   siteDescription: 'Italian way of code', // Your site description
   author: 'Davide Bellone', // Author for schemaORGJSONLD
   siteLogo: '/assets/logo.png', // Image for schemaORGJSONLD
+
+  // OG
+  ogSiteName: 'Code4IT',
+  ogLanguage: 'en_GB',
 
   userTwitter: '@BelloneDavide', // Twitter Username - Optional
 
@@ -34,6 +38,9 @@ export default {
   DateTimeFormat: 'MMMM DD, YYYY',
 
   //
-  homepageBanner: 'https://res.cloudinary.com/bellons/image/upload/t_ww2/Code4IT/Performance%20optimization%20csharp/Cover_1_wdpnsq.jpg',
+  homepageBanner: '/assets/Code4It-bg-image.jpg',
   defaultArticleBanner: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg',
+  mySpeechPageBanner: '/assets/bg/1.jpg',
+  aboutMePageBanner: '/assets/bg/2.jpg',
+  latestArticlePageBanner: '/assets/bg/3.jpg',
 };

@@ -6,7 +6,7 @@ import config from '../../config/SiteConfig';
 import PageProps from '../models/PageProps';
 import { MainNavigation } from '../components/MainNavigation';
 import styled from 'styled-components';
-import { Layout, Header, SectionTitle, Wrapper, Content, Button } from '../components';
+import { Layout, Header, SectionTitle, Wrapper, Content, Button, SEO } from '../components';
 import { TwitterIcon, GitHubIcon, LinkedInIcon, ExternalLinkIcon } from '../components/Icons';
 import { media } from '../utils/media';
 
@@ -38,10 +38,17 @@ export const Bio = styled.section`
 
 export default class ContactPage extends React.Component<PageProps> {
   public render() {
+    const img = config.aboutMePageBanner;
+
     return (
       <Layout>
-        <Helmet title={`Contact | ${config.siteTitle}`} />
-        <Header>
+        <SEO
+          pageTitle={`About me | ${config.siteTitle}`}
+          pageDescription="Davide Bellone is a software developer based on Turin, Italy. He spent most of his work life working on Microsoft environment, beginning with the first job as a SharePoint developer, moving to MVC 5, Rest API + Angular and finally to a full backend role."
+          pageImage={img}
+        />
+
+        <Header banner={img}>
           <Link to="/" title="homepage">
             {config.siteTitle}
           </Link>
@@ -55,9 +62,9 @@ export default class ContactPage extends React.Component<PageProps> {
             <Bio>
               <div id="description">
                 <p>
-                  Davide is a software developer based on Turin, Italy. He spent most of his work life working on Microsoft environment,
-                  beginning with the first job as a SharePoint developer, moving to MVC 5, Rest API + Angular and finally to a full backend
-                  role.
+                  Davide Bellone is a software developer based on Turin, Italy. He spent most of his work life working on Microsoft
+                  environment, beginning with the first job as a SharePoint developer, moving to MVC 5, Rest API + Angular and finally to a
+                  full backend role.
                 </p>
 
                 <p>His passion for sharing knowledge led him to be the host for a conference and to focus on content creation.</p>

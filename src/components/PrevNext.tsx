@@ -1,16 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
-import kebabCase from 'lodash/kebabCase';
 import Post from '../models/Post';
-import { HomepageArticle } from './HomepageArticle';
 import config from '../../config/SiteConfig';
-import { Article } from '.';
 import { SidebarArticle } from './SidebarArticle';
 import { media } from '../utils/media';
 import moment from 'moment';
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   margin: 1rem auto 0 auto;
@@ -26,6 +22,11 @@ const Wrapper = styled.div`
     top: 0;
   }
 `;
+const SectionTitle = styled.p`
+  text-align: center;
+  font-weight: bolder;
+  font-size: x-large;
+`;
 
 interface Props {
   next: Post;
@@ -37,13 +38,13 @@ export class PrevNext extends React.PureComponent<Props> {
     const { prev, next } = this.props;
     return (
       <Wrapper>
-        <h2>Other articles</h2>
+        <SectionTitle>See also</SectionTitle>
         {prev && (
           <SidebarArticle
             title={prev.frontmatter.title}
             date={moment(prev.frontmatter.date).format(config.DateTimeFormat)}
-            slug={prev.fields.slug}
-            key={prev.fields.slug}
+            slug={prev.frontmatter.slug || prev.fields.slug}
+            key={prev.frontmatter.slug || prev.fields.slug}
             tags={prev.frontmatter.tags || []}
           />
         )}
@@ -51,8 +52,8 @@ export class PrevNext extends React.PureComponent<Props> {
           <SidebarArticle
             title={next.frontmatter.title}
             date={moment(next.frontmatter.date).format(config.DateTimeFormat)}
-            slug={next.fields.slug}
-            key={next.fields.slug}
+            slug={next.frontmatter.slug || next.fields.slug}
+            key={next.frontmatter.slug || next.fields.slug}
             tags={next.frontmatter.tags || []}
           />
         )}

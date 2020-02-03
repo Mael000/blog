@@ -9,13 +9,15 @@ import config from '../../config/SiteConfig';
 const Post = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 0.5rem;
+  margin: 0 0.5rem 0.5rem 0.5rem;
   h2 {
     font-size: x-large;
   }
+  box-shadow: 2px 4px 20px 1px rgba(0, 0, 0, 0.75);
+  padding: 1rem;
 `;
 
-const Title = styled.h2`
+const Title = styled.strong`
   position: relative;
   text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   margin-bottom: 0.75rem;
@@ -29,12 +31,15 @@ interface Props {
 }
 
 const TagsHolder = styled.div`
-  a:after {
-    content: ', ';
-  }
-  a:last-child:after {
-    content: '';
-  }
+  //   a:after {
+  //     content: ', ';
+  //   }
+  //   a:last-child:after {
+  //     content: '';
+  //   }
+  display: flex;
+
+  flex-wrap: wrap;
 `;
 
 export class SidebarArticle extends React.PureComponent<Props> {
@@ -53,7 +58,7 @@ export class SidebarArticle extends React.PureComponent<Props> {
           <TagsHolder>
             Tags:
             {(tags || []).map((tag, i) => (
-              <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`} title={tag}>
+              <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`} title={tag} className="tag">
                 {tag}
               </Link>
             ))}

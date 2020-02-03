@@ -48,18 +48,18 @@ const MainImage = styled.div`
 `;
 
 const TagsHolder = styled.div`
-  a:after {
-    content: ', ';
-  }
-  a:last-child:after {
-    content: '';
-  }
+  // a:after {
+  //   content: ', ';
+  // }
+  // a:last-child:after {
+  //   content: '';
+  // }
 `;
 
 export class HomepageArticle extends React.PureComponent<Props> {
   public render() {
     const { title, date, excerpt, slug, timeToRead, mainImage, tags } = this.props;
-    const imageFormat = 't_dev-to';
+    const imageFormat = 't_code4it_homepage_article';
 
     const image = mainImage?.replace('{format}', imageFormat);
     return (
@@ -80,7 +80,7 @@ export class HomepageArticle extends React.PureComponent<Props> {
               <TagsHolder>
                 Tags:
                 {(tags || []).map((tag, i) => (
-                  <Link to={`/tags/${kebabCase(tag)}`} key={`arthp-${slug}-${i}`} title={tag}>
+                  <Link to={`/tags/${kebabCase(tag)}`} key={`arthp-${slug}-${i}`} title={tag} className="tag">
                     {tag}
                   </Link>
                 ))}

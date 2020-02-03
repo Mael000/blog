@@ -11,8 +11,9 @@ import Post from '../models/Post';
 import { MainNavigation } from '../components/MainNavigation';
 import { media } from '../utils/media';
 import { isMobile } from 'react-device-detect';
-import * as moment from 'moment';
+import moment from 'moment';
 import { ShareButton, ShareButtons } from '../components/ShareButtons';
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -37,13 +38,20 @@ const PostContent = styled.article`
   }
 `;
 
-const PostSidebar = styled.div`
+const PostSidebar = styled.aside`
   margin-top: 2rem;
   flex: 1;
   padding: 0.5rem;
   @media ${media.tablet} {
     margin-top: 0;
   }
+`;
+
+const TagsHolder = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 `;
 
 interface Props {
@@ -64,11 +72,22 @@ export default class PostPage extends React.PureComponent<Props> {
 
     const image = (post?.frontmatter?.banner || config.defaultArticleBanner).replace('{format}', imageFormat);
 
+    const slug = post.frontmatter.slug || kebabCase(post.frontmatter.title);
+
+    const fullUrl = this.componeUrl(config.siteUrl, config.blogPath, slug);
+
+    const disqusConfig = {
+      url: `${fullUrl}`,
+      identifier: slug,
+      title: post.frontmatter.title,
+    };
+    console.table(disqusConfig);
+
     return (
       <Layout>
         {post ? (
           <>
-            <SEO postPath={post.fields.slug} postNode={post} postSEO />
+            <SEO postPath={post.frontmatter.slug || post.fields.slug} postNode={post} postSEO />
             <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
             <Header banner={image}>
               <Link to="/" title="homepage">
@@ -86,20 +105,20 @@ export default class PostPage extends React.PureComponent<Props> {
                   <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
                   <PostSidebar>
                     {post.frontmatter.tags ? (
-                      <Subline>
-                        Tags: &#160;
+                      <TagsHolder>
                         {post.frontmatter.tags.map((tag, i) => (
-                          <Link key={i} to={`/tags/${kebabCase(tag)}`} title={tag}>
-                            <strong>{tag}</strong> {i < post.frontmatter.tags.length - 1 ? `, ` : ``}
+                          <Link key={i} to={`/tags/${kebabCase(tag)}`} title={tag} className="tag">
+                            <strong>{tag}</strong>
                           </Link>
                         ))}
-                      </Subline>
+                      </TagsHolder>
                     ) : null}
                     <ShareButtons post={post} />
 
                     <PrevNext prev={prev} next={next} />
                   </PostSidebar>
                 </ContentWrapper>
+                <Disqus config={disqusConfig} />
               </Content>
             </Wrapper>
           </>
@@ -107,6 +126,16 @@ export default class PostPage extends React.PureComponent<Props> {
       </Layout>
     );
   }
+
+  public componeUrl = function(...parts: string[]): string {
+    const trimmed = parts.map(x => {
+      let tmp = x;
+      if (tmp.startsWith('/')) tmp = x.substring(1, tmp.length);
+      if (tmp.endsWith('/')) tmp = tmp.substring(0, tmp.length - 1);
+      return tmp;
+    });
+    return trimmed.join('/');
+  };
 }
 
 export const postQuery = graphql`
@@ -123,6 +152,7 @@ export const postQuery = graphql`
         category
         tags
         banner
+        slug
       }
       timeToRead
     }

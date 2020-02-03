@@ -113,10 +113,10 @@ export class Layout extends React.PureComponent<{}> {
                 <FooterWrapper>
                   <span>&copy; {split(data.site.buildTime, '-')[0]} by Davide Bellone</span>
                   <span>
-                    <a href="https://www.twitter.com/bellonedavide">
+                    <a href="https://www.twitter.com/bellonedavide" title="Davide Bellone on Twitter">
                       <TwitterIcon />
                     </a>
-                    <a href="https://www.linkedin.com/in/davide-bellone">
+                    <a href="https://www.linkedin.com/in/davide-bellone" title="Davide Bellone on LinkedIn">
                       <LinkedInIcon />
                     </a>
                   </span>

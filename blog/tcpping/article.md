@@ -8,19 +8,10 @@ banner: "https://res.cloudinary.com/bellons/image/upload/{format}/Code4IT/TCPPIN
 
 I think you know what __ping__ is: it is a command that you can run on your terminal to see if an host is up and running. 
  
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A few days passed since the <a href="https://twitter.com/hashtag/dotNETConf?src=hash&amp;ref_src=twsrc%5Etfw">#dotNETConf</a> <a href="https://twitter.com/hashtag/Blazor?src=hash&amp;ref_src=twsrc%5Etfw">#Blazor</a> focus presentations. Are you still hyped? Do you believe in Blazor, or what are your concerns? <br><br>I&#39;m convinced it&#39;s going to have a great future in the <a href="https://twitter.com/hashtag/dotnet?src=hash&amp;ref_src=twsrc%5Etfw">#dotnet</a> universe.</p>&mdash; Claudio Bernasconi (@CHBernasconiC) <a href="https://twitter.com/CHBernasconiC/status/1218104263706128384?ref_src=twsrc%5Etfw">January 17, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 
 It works by sending some packets to the host and waiting for a response, and it measures the round-trip time that the message takes to go to the host and come back to the client.
 
-
-
-<figure>
-    <img src="https://media.giphy.com/media/g8A6kKFew4w0w/giphy.gif"
-         alt="Elephant at sunset">
-    <figcaption>A round trip example</figcaption>
-</figure>
- 
+![A round trip example](https://media.giphy.com/media/g8A6kKFew4w0w/giphy.gif)
 
 An example can be 
 
