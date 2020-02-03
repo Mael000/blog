@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
 import config from '../../config/SiteConfig';
 import { MainNavigation } from '../components/MainNavigation';

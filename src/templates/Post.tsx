@@ -72,11 +72,16 @@ export default class PostPage extends React.PureComponent<Props> {
 
     const image = (post?.frontmatter?.banner || config.defaultArticleBanner).replace('{format}', imageFormat);
 
+    const slug = post.frontmatter.slug || kebabCase(post.frontmatter.title);
+
+    const fullUrl = this.componeUrl(config.siteUrl, config.blogPath, slug);
+
     const disqusConfig = {
-      url: `${config.siteUrl + location.pathname}`,
-      identifier: post.id,
-      title: post.title,
+      url: `${fullUrl}`,
+      identifier: slug,
+      title: post.frontmatter.title,
     };
+    console.table(disqusConfig);
 
     return (
       <Layout>
@@ -121,6 +126,16 @@ export default class PostPage extends React.PureComponent<Props> {
       </Layout>
     );
   }
+
+  public componeUrl = function(...parts: string[]): string {
+    const trimmed = parts.map(x => {
+      let tmp = x;
+      if (tmp.startsWith('/')) tmp = x.substring(1, tmp.length);
+      if (tmp.endsWith('/')) tmp = tmp.substring(0, tmp.length - 1);
+      return tmp;
+    });
+    return trimmed.join('/');
+  };
 }
 
 export const postQuery = graphql`
