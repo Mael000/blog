@@ -81,7 +81,6 @@ export default class PostPage extends React.PureComponent<Props> {
       identifier: slug,
       title: post.frontmatter.title,
     };
-    console.table(disqusConfig);
 
     return (
       <Layout>

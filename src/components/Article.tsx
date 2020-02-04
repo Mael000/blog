@@ -56,7 +56,7 @@ export class Article extends React.PureComponent<Props> {
           </Link>
         </Title>
         <Subline>
-          {moment(date).format(config.DateTimeFormat)} &mdash; {timeToRead} Min Read
+          {date} &mdash; {timeToRead} Min Read
           <TagsHolder>
             Tags:
             {(tags || []).map((tag, i) => (

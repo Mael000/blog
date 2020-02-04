@@ -47,14 +47,7 @@ const MainImage = styled.div`
   background-position: center;
 `;
 
-const TagsHolder = styled.div`
-  // a:after {
-  //   content: ', ';
-  // }
-  // a:last-child:after {
-  //   content: '';
-  // }
-`;
+const TagsHolder = styled.div``;
 
 export class HomepageArticle extends React.PureComponent<Props> {
   public render() {
@@ -75,7 +68,7 @@ export class HomepageArticle extends React.PureComponent<Props> {
             <Excerpt>{excerpt}</Excerpt>
             <div>
               <div>
-                {moment(date).format(config.DateTimeFormat)} &mdash; {timeToRead} Min Read
+                {date} &mdash; {timeToRead} Min Read
               </div>
               <TagsHolder>
                 Tags:

@@ -31,21 +31,13 @@ interface Props {
 }
 
 const TagsHolder = styled.div`
-  //   a:after {
-  //     content: ', ';
-  //   }
-  //   a:last-child:after {
-  //     content: '';
-  //   }
   display: flex;
-
   flex-wrap: wrap;
 `;
 
 export class SidebarArticle extends React.PureComponent<Props> {
   public render() {
     const { title, date, slug, tags } = this.props;
-
     return (
       <Post>
         <Title>
@@ -54,7 +46,8 @@ export class SidebarArticle extends React.PureComponent<Props> {
           </Link>
         </Title>
         <Subline>
-          {moment(date).format(config.DateTimeFormat)}
+          {date}
+          {/* {moment.parseZone(date, '').format(config.DateTimeFormat)} */}
           <TagsHolder>
             Tags:
             {(tags || []).map((tag, i) => (
