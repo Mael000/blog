@@ -27,14 +27,15 @@ export const SEO = (props: SEO) => {
     const postMeta = postNode.frontmatter;
     title = postMeta.title;
     description = postNode.excerpt;
-    image = postNode.frontmatter?.banner?.replace('{format}', '') ?? config.defaultArticleBanner;
+    image = postNode.frontmatter?.banner?.replace('{format}', 'c_scale,w_520') ?? config.defaultArticleBanner;
     postURL = config.siteUrl + realPrefix + postPath;
   } else {
     title = pageTitle || config.siteTitle;
     description = pageDescription || config.siteDescription;
     image = pageImage?.replace('{format}', '') || siteImage;
   }
-  image = config.siteUrl + realPrefix + image;
+  // image = config.siteUrl + realPrefix + image;
+  console.log('image:', image);
   const blogURL = config.siteUrl + config.pathPrefix;
   let schemaOrgJSONLD = [
     {
