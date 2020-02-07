@@ -84,6 +84,7 @@ module.exports = {
               {
                 allMarkdownRemark(
                   sort: { order: DESC, fields: [frontmatter___date] },
+                  filter: { fields: { draft: { eq: false } } } 
                 ) {
                   edges {
                     node {
