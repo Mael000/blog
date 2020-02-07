@@ -16,11 +16,6 @@ const Wrapper = styled.section`
     align-items: center;
   }
   justify-items: center;
-
-  @media ${media.desktop} {
-    position: sticky;
-    top: 0;
-  }
 `;
 const SectionTitle = styled.p`
   text-align: center;

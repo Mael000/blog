@@ -45,6 +45,17 @@ const PostSidebar = styled.aside`
   @media ${media.tablet} {
     margin-top: 0;
   }
+
+  section[class^="ShareButtons_"]{
+    @media ${media.desktop} {
+      position: sticky;
+      top: 0;
+    }
+  }
+
+ 
+}
+
 `;
 
 const TagsHolder = styled.section`
@@ -64,6 +75,9 @@ interface Props {
 export default class PostPage extends React.PureComponent<Props> {
   public render() {
     const { prev, next } = this.props.pathContext;
+
+    console.log(this.props);
+
     const post = this.props.data.markdownRemark;
 
     const isFullWidth = isMobile;
@@ -112,9 +126,10 @@ export default class PostPage extends React.PureComponent<Props> {
                         ))}
                       </TagsHolder>
                     ) : null}
-                    <ShareButtons post={post} />
 
-                    <PrevNext prev={prev} next={next} />
+                    {prev || next ? <PrevNext prev={prev} next={next} /> : null}
+
+                    <ShareButtons post={post} />
                   </PostSidebar>
                 </ContentWrapper>
                 <Disqus config={disqusConfig} />

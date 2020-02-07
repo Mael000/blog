@@ -1,5 +1,5 @@
 ---
-date: "2019-11-20"
+date: "2219-11-20"
 title: "How to ping from an Azure App service"
 tags: ['Talks', 'Career']
 banner: "https://res.cloudinary.com/bellons/image/upload/{format}/Code4IT/TCPPING/cover_tcpping.jpg"

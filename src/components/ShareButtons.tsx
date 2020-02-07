@@ -22,6 +22,12 @@ export const ShareButtonsList = styled.section`
   align-items: center;
 `;
 
+export const ShareButtonsSectionTitle = styled.p`
+  text-align: center;
+  font-weight: bolder;
+  font-size: x-large;
+`;
+
 export interface Props {
   post: Post;
 }
@@ -35,7 +41,7 @@ export class ShareButtons extends React.PureComponent<Props> {
     // https://www.npmjs.com/package/react-share
     return (
       <ShareButtonsList>
-        <div>Spread the word!</div>
+        <ShareButtonsSectionTitle>Spread the word!</ShareButtonsSectionTitle>
         <div id="buttons">
           <TwitterShareButton
             size={32}
