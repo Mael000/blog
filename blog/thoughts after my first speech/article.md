@@ -1,7 +1,6 @@
 ---
 date: "2019-11-20"
 title: "Thoughts after my very first public speech"
-category: "Misc"
 tags: ['Talks', 'Career']
 banner: "https://res.cloudinary.com/bellons/image/upload/{format}/Code4IT/Thoughts%20after%20my%20very%20first%20public%20speech/microphone.jpg"
 ---

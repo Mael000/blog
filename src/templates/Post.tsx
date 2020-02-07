@@ -148,10 +148,10 @@ export const postQuery = graphql`
       frontmatter {
         title
         date
-        category
         tags
         banner
         slug
+        description
       }
       timeToRead
     }

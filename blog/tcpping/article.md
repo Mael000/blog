@@ -1,7 +1,6 @@
 ---
 date: "2019-11-20"
 title: "How to ping from an Azure App service"
-category: "Misc"
 tags: ['Talks', 'Career']
 banner: "https://res.cloudinary.com/bellons/image/upload/{format}/Code4IT/TCPPING/cover_tcpping.jpg"
 ---

@@ -104,10 +104,10 @@ exports.createPages = ({ actions, graphql }) => {
           frontmatter {
             date
             title
-            category
             tags
             banner
             slug
+            description
           }
           timeToRead
         }

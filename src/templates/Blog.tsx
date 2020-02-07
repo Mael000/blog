@@ -70,11 +70,11 @@ export const BlogQuery = graphql`
           frontmatter {
             title
             date
-            category
             tags
             slug
+            description
           }
-          excerpt(pruneLength: 200)
+          excerpt
           timeToRead
         }
       }

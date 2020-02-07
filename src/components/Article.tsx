@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import { Subline } from './Subline';
-import moment from 'moment';
-import config from '../../config/SiteConfig';
 
 const Post = styled.article`
   display: flex;
@@ -31,7 +29,6 @@ interface Props {
   excerpt: string;
   slug: string;
   timeToRead: number;
-  category: string;
   tags: string[];
 }
 
