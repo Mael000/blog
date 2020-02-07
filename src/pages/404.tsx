@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { MainNavigation } from '../components/MainNavigation';
 
 export const MessageWrapper = styled.div`
   display: flex;
@@ -26,6 +27,8 @@ export default class NotFoundPage extends React.Component<any> {
           </Link>
           <SectionTitle> PAGE NOT FOUND</SectionTitle>
         </Header>
+        <MainNavigation />
+
         <Wrapper>
           <Content>
             <MessageWrapper>
