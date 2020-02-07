@@ -13,11 +13,12 @@ export default class TagTemplate extends React.PureComponent<PageProps> {
     const { posts, tagName } = this.props.pathContext;
     const totalCount = posts ? posts.length : 0;
     const subline = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${tagName}"`;
+    const img = config.latestArticlePageBanner;
 
     return (
       <Layout>
         <Helmet title={`${'Tags'} | ${config.siteTitle}`} />
-        <Header>
+        <Header banner={img}>
           <Link to="/" title="homepage">
             {config.siteTitle}
           </Link>
@@ -40,9 +41,8 @@ export default class TagTemplate extends React.PureComponent<PageProps> {
                     title={post.frontmatter.title}
                     date={moment(post.frontmatter.date).format(config.DateTimeFormat)}
                     excerpt={post.excerpt}
-                    slug={kebabCase(post.frontmatter.title)}
+                    slug={post.frontmatter.slug || kebabCase(post.frontmatter.title)}
                     timeToRead={post.timeToRead}
-                    category={post.frontmatter.category}
                     key={index}
                     tags={post.frontmatter.tags}
                   />

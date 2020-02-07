@@ -10,12 +10,14 @@ import { MainNavigation } from '../components/MainNavigation';
 
 export default class AllTagTemplate extends React.PureComponent<PageProps> {
   public render() {
+    const img = config.latestArticlePageBanner;
+
     const { tags } = this.props.pathContext;
     if (tags) {
       return (
         <Layout>
           <Helmet title={`Tags | ${config.siteTitle}`} />
-          <Header>
+          <Header banner={img}>
             <Link to="/" title="homepage">
               {config.siteTitle}
             </Link>

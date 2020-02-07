@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Layout, Wrapper, Button, Article, Header, Content, SectionTitle } from '../components';
+import { Layout, Wrapper, Button, Article, Header, Content, SectionTitle, SEO } from '../components';
 import PageProps from '../models/PageProps';
 import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
@@ -31,12 +31,19 @@ export default class IndexPage extends React.Component<PageProps> {
   public render() {
     const { data } = this.props;
     const { edges, totalCount } = data.allMarkdownRemark;
+    const bannerImage = config.homepageBanner;
+
     return (
       <Layout>
         <Wrapper fullWidth={true}>
-          <Helmet title={`Homepage | ${config.siteTitle}`} />
+          <SEO
+            pageTitle={`Homepage | ${config.siteTitle} | ${config.siteDescription}`}
+            pageDescription="Davide Bellone is a software developer based on Turin, Italy. Microsoft lover, but cheated on it with Angular."
+            pageImage={bannerImage}
+          />
+
           <Homepage>
-            <Header banner={config.homepageBanner}>
+            <Header banner={bannerImage}>
               <SectionTitle>{config.siteTitle}</SectionTitle>
               <p>{config.siteDescription}</p>
             </Header>
@@ -49,11 +56,10 @@ export default class IndexPage extends React.Component<PageProps> {
                     <HomepageArticle
                       title={post.node.frontmatter.title}
                       date={post.node.frontmatter.date}
-                      excerpt={post.node.excerpt || ''}
+                      excerpt={post.node.frontmatter.description || post.node.excerpt || ''}
                       timeToRead={post.node.timeToRead}
-                      slug={post.node.fields.slug}
-                      category={post.node.frontmatter.category}
-                      key={post.node.fields.slug}
+                      slug={post.node.frontmatter.slug || post.node.fields.slug}
+                      key={post.node.frontmatter.slug || post.node.fields.slug}
                       mainImage={post.node.frontmatter.banner || config.defaultArticleBanner}
                       tags={post.node.frontmatter.tags || []}
                     />
@@ -80,9 +86,10 @@ export const IndexQuery = graphql`
           frontmatter {
             title
             date(formatString: "YYYY-MMM-DD")
-            category
             banner
             tags
+            slug
+            description
           }
           timeToRead
         }

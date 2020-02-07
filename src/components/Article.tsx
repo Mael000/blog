@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import { Subline } from './Subline';
-import moment from 'moment';
-import config from '../../config/SiteConfig';
 
 const Post = styled.article`
   display: flex;
@@ -31,17 +29,16 @@ interface Props {
   excerpt: string;
   slug: string;
   timeToRead: number;
-  category: string;
   tags: string[];
 }
 
 const TagsHolder = styled.div`
-  a:after {
-    content: ', ';
-  }
-  a:last-child:after {
-    content: '';
-  }
+  //   a:after {
+  //     content: ', ';
+  //   }
+  //   a:last-child:after {
+  //     content: '';
+  //   }
 `;
 
 export class Article extends React.PureComponent<Props> {
@@ -56,11 +53,11 @@ export class Article extends React.PureComponent<Props> {
           </Link>
         </Title>
         <Subline>
-          {moment(date).format(config.DateTimeFormat)} &mdash; {timeToRead} Min Read
+          {date} &mdash; {timeToRead} Min Read
           <TagsHolder>
             Tags:
             {(tags || []).map((tag, i) => (
-              <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`} title={tag}>
+              <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`} title={tag} className="tag">
                 {tag}
               </Link>
             ))}

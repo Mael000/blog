@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
-import { Layout, Wrapper, Header, Button, Content, SectionTitle } from '../components';
+import { Layout, Wrapper, Header, Button, Content, SectionTitle, SEO } from '../components';
 
 import config from '../../config/SiteConfig';
 import PageProps from '../models/PageProps';
@@ -17,10 +17,16 @@ export const SpeechSession = styled.section`
 
 export default class MySpeechesPage extends React.Component<PageProps> {
   public render() {
+    const img = config.mySpeechPageBanner;
     return (
       <Layout>
-        <Helmet title={`My speeches | ${config.siteTitle}`} />
-        <Header>
+        <SEO
+          pageTitle={`My speeches | ${config.siteTitle} | ${config.siteDescription}`}
+          pageDescription="Davide Bellone is a software developer based on Turin, Italy. He spent most of his work life working on Microsoft environment, beginning with the first job as a SharePoint developer, moving to MVC 5, Rest API + Angular and finally to a full backend role."
+          pageImage={img}
+        />
+
+        <Header banner={img}>
           <Link to="/" title="homepage">
             {config.siteTitle}
           </Link>
@@ -46,9 +52,8 @@ export default class MySpeechesPage extends React.Component<PageProps> {
               <div>
                 <iframe
                   src="https://www.youtube.com/embed/hSCwzEm4M1A"
-                  frameborder="0"
                   allow=" autoplay; encrypted-media; picture-in-picture"
-                  allowfullscreen
+                  allowFullScreen
                 />
               </div>
             </SpeechSession>

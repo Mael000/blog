@@ -47,19 +47,12 @@ const MainImage = styled.div`
   background-position: center;
 `;
 
-const TagsHolder = styled.div`
-  a:after {
-    content: ', ';
-  }
-  a:last-child:after {
-    content: '';
-  }
-`;
+const TagsHolder = styled.div``;
 
 export class HomepageArticle extends React.PureComponent<Props> {
   public render() {
     const { title, date, excerpt, slug, timeToRead, mainImage, tags } = this.props;
-    const imageFormat = 't_dev-to';
+    const imageFormat = 't_code4it_homepage_article';
 
     const image = mainImage?.replace('{format}', imageFormat);
     return (
@@ -75,12 +68,12 @@ export class HomepageArticle extends React.PureComponent<Props> {
             <Excerpt>{excerpt}</Excerpt>
             <div>
               <div>
-                {moment(date).format(config.DateTimeFormat)} &mdash; {timeToRead} Min Read
+                {date} &mdash; {timeToRead} Min Read
               </div>
               <TagsHolder>
                 Tags:
                 {(tags || []).map((tag, i) => (
-                  <Link to={`/tags/${kebabCase(tag)}`} key={`arthp-${slug}-${i}`} title={tag}>
+                  <Link to={`/tags/${kebabCase(tag)}`} key={`arthp-${slug}-${i}`} title={tag} className="tag">
                     {tag}
                   </Link>
                 ))}

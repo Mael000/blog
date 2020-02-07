@@ -40,4 +40,7 @@ export default {
   //
   homepageBanner: '/assets/Code4It-bg-image.jpg',
   defaultArticleBanner: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg',
+  mySpeechPageBanner: '/assets/bg/1.jpg',
+  aboutMePageBanner: '/assets/bg/2.jpg',
+  latestArticlePageBanner: '/assets/bg/3.jpg',
 };

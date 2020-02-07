@@ -38,7 +38,7 @@ gatsby new my_blog https://github.com/mhadaily/gatsby-starter-typescript-power-b
   - Mobile-First approach in development.
   - TSLint & Prettier
   - Offline support
-  - Category and Tag for post
+  - Tag for post
   - Type Safe by TypeScript
   - Format Safe by TSLint, StyleLint and Prettier with Lint-Staged(Husky)
   - Blog page
