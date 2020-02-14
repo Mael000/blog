@@ -6,7 +6,8 @@ import { media } from '../utils/media';
 import split from 'lodash/split';
 import './layout.scss';
 import { Button } from '.';
-import { TwitterIcon, LinkedInIcon } from './Icons';
+import { TwitterIcon, LinkedInIcon, RSSIcon } from './Icons';
+import SiteConfig from '../../config/SiteConfig';
 
 const GlobalStyle = createGlobalStyle`
   ::selection {
@@ -94,6 +95,7 @@ const FooterWrapper = styled.div`
 export class Layout extends React.PureComponent<{}> {
   public render() {
     const { children } = this.props;
+    const rssUrl = `${SiteConfig.siteUrl}/rss.xml`;
 
     return (
       <StaticQuery
@@ -118,6 +120,10 @@ export class Layout extends React.PureComponent<{}> {
                     </a>
                     <a href="https://www.linkedin.com/in/davide-bellone" title="Davide Bellone on LinkedIn">
                       <LinkedInIcon />
+                    </a>
+
+                    <a href={rssUrl} title="Code4IT RSS feed">
+                      <RSSIcon />
                     </a>
                   </span>
                 </FooterWrapper>
