@@ -1,5 +1,5 @@
 ---
-date: "1219-11-20"
+date: "2018-10-25"
 title: "Angular vs NPM vs Node.js"
 tags: ['Angular', 'Node.js', 'NPM']
 banner: "https://res.cloudinary.com/bellons/image/upload/{format}/Code4IT/Covers/npm-angular-node.jpg"
