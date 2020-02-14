@@ -2,6 +2,7 @@
 date: "1219-11-20"
 title: "Angular vs NPM vs Node.js"
 tags: ['Angular', 'Node.js', 'NPM']
+banner: "https://res.cloudinary.com/bellons/image/upload/{format}/Code4IT/Covers/npm-angular-node.jpg"
 ---
 
 There's a lot of confusion about Node.js, NPM and Angular. These 3 "entities" are often used together, especially for Angular applications, but they are not the same thing.
