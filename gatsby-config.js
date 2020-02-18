@@ -168,6 +168,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-draft',
       options: {
+        publishDraft: process.env.NODE_ENV !== 'production',
       },
     },
 
