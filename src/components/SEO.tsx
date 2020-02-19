@@ -30,7 +30,7 @@ export const SEO = (props: SEO) => {
     console.table(postNode.frontmatter);
 
     description = postNode.frontmatter.description || postNode.excerpt;
-    image = postNode.frontmatter?.banner?.replace('{format}', 'c_scale,w_520') ?? config.defaultArticleBanner;
+    image = postNode.frontmatter?.banner?.replace('{format}', '') ?? config.defaultArticleBanner;
     postURL = config.siteUrl + realPrefix + postPath;
   } else {
     title = pageTitle || config.siteTitle;

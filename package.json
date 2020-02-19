@@ -16,7 +16,7 @@
     "lint": "tslint --project .",
     "lint:fix": "tslint --fix --project .",
     "fix": "prettier --write 'src/**/*.{ts,tsx,scss,md}' && tslint --fix 'src/**/*.{ts,tsx}' -p tsconfig.json && stylelint --fix 'src/**/*.scss' ",
-    "serve-prod":"gatsby build && gatsby serve"
+    "serve-prod": "gatsby build && gatsby serve"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.117",
@@ -81,6 +81,7 @@
     "react": "^16.12.0",
     "react-device-detect": "^1.11.14",
     "react-dom": "^16.12.0",
+    "react-ga": "^2.7.0",
     "react-share": "^4.0.1"
   }
 }
