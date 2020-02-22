@@ -85,7 +85,7 @@ The `YouTubeService` class contains references to most of the capabilities provi
 
 _Confession time!_ I still haven't figured out what the _snippet_ value means, and if there are other values. Every example in the documentation use this value.
 
-The parameters meaning is straightforward. But just a consideration: since the service searches for each part of YouTube, __you can restrict the type of the content that you want__. Here I set "video", but you can use a combination of "video", "channel" and "playlist", separated by a comma. 
+The parameters meaning is straightforward. But just a consideration: since the service searches for each part of YouTube, __you can restrict the type of content that you want__. Here I set "video", but you can use a combination of "video", "channel" and "playlist", separated by a comma. 
 
 
 Now that we have set our search parameters, we can get the results:
@@ -131,12 +131,12 @@ _Notice_: most of the interesting properties of a video are stored in the inner 
 
 ## Final result
 
-Now you have all the info you need! You can have a look on a complete example on [my GitHub account](https://github.com/bellons91/youtube-search). I have done a bit of refactoring: now the method is wrapped into an async method, and the configurations are stored outside the method.
+Now you have all the info you need! You can have a look at a complete example on [my GitHub account](https://github.com/bellons91/youtube-search). I have done a bit of refactoring: now the method is wrapped into an async method, and the configurations are stored outside the method.
 
 
 ## The pagination issue
 
-As you might have notices, I didn't mentioned the pagination.
+As you might have noticed, I didn't mention the pagination.
 
 YouTube uses a curious way to handle it: instead of allowing you to set the current page (or the typical skip and limit parameters), __it returns a token for the next page and a token for the previous page__.
 
