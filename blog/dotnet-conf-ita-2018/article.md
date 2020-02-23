@@ -2,7 +2,7 @@
 date: "2018-10-29"
 title: "Few things from .NET Conference Italia 2018"
 tags: ['.NET', 'C#', 'Misc']
-banner: "https://res.cloudinary.com/bellons/image/upload/{format}/Code4IT/TCPPING/cover_tcpping.jpg"
+banner: "https://res.cloudinary.com/bellons/image/upload/{format}/Code4IT/Covers/dotnet-conf-2018.jpg"
 description : "Few things I learned at .NET Conf Italia: interfaces and abstract classes, Blazor, C# default interfaces and .NET Core on Samsung TV"
 slug: 'dotnet-conference-italia-2018'
 ---
