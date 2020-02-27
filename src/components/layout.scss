@@ -58,3 +58,7 @@ article figure{
     text-decoration: underline;
   }
 }
+
+:not(pre) > code[class*="language-"]{
+  word-break: break-all;
+}
