@@ -16,7 +16,8 @@
     "lint": "tslint --project .",
     "lint:fix": "tslint --fix --project .",
     "fix": "prettier --write 'src/**/*.{ts,tsx,scss,md}' && tslint --fix 'src/**/*.{ts,tsx}' -p tsconfig.json && stylelint --fix 'src/**/*.scss' ",
-    "serve-prod": "gatsby build && gatsby serve"
+    "serve-prod": "gatsby build && gatsby serve",
+    "create-article":"@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./article-creator.ps1 ./blog/NomeCartella" 
   },
   "devDependencies": {
     "@types/lodash": "^4.14.117",
