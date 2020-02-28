@@ -60,6 +60,11 @@ article figure{
   }
 }
 
+
+:not(pre) > code[class*="language-"]{
+  word-break: break-all;
+}
+
 article[class ^=Post__PostContent] a{
   color: $primary;
   text-decoration: underline;
