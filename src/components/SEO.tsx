@@ -19,7 +19,7 @@ export const SEO = (props: SEO) => {
   let description;
   let image;
   let postURL;
-  const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
+  const realPrefix = config.blogPath === '/' ? '' : config.blogPath;
 
   const siteImage = config.siteBanner.replace('{format}', '');
 
@@ -37,8 +37,6 @@ export const SEO = (props: SEO) => {
     description = pageDescription || config.siteDescription;
     image = pageImage?.replace('{format}', '') || siteImage;
   }
-  // image = config.siteUrl + realPrefix + image;
-  console.log('image:', image);
   const blogURL = config.siteUrl + config.pathPrefix;
   let schemaOrgJSONLD = [
     {
