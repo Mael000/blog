@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /post-schedule
-
-sitemap: https://power-blog-typescirpt.github.com/sitemap.xml
