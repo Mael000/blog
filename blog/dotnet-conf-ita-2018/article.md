@@ -44,7 +44,7 @@ public class MyImplementation : IMyInterface
 }
 ```
 
-As you can see, in the interface it won't be mandatory to implement all the methods, but only the ones with no default behavior. The others can be obviously overridden.
+As you can see, in the interface it won't be mandatory to implement all the methods, but only the ones with no default behavior. The others can be obviously overridden. 
 
 ## Tiered Compilation for .NET Core 2.1
 
