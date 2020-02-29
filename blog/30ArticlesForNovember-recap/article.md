@@ -3,7 +3,7 @@ date: "2019-12-05"
 title: "A recap of my 30ArticlesForNovember"
 tags: ['C#', '.NET', 'Programming'] 
 slug: '30articlesfornovember-a-recap'
-banner: "https://res.cloudinary.com/bellons/image/upload/{format}/Code4IT/Covers/30articlesForNovember.jpg"
+banner: "https://res.cloudinary.com/bellons/image/upload/{format}/Code4IT/Covers/30Articles-ForNovember.jpg"
 description : "On November I shared on Twitter an article each day. They were about C#, general programming and advanced topics. For celebrating the conclusion of this challenge, I wrote a poem about that."
 ---
 
