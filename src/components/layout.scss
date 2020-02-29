@@ -33,6 +33,7 @@ $grey-dark: #2b2b2b;
 $grey-light: #eee;
 $green: #86c023;
 $blue: #017ac7;
+$primary: #317580;
 
 // Transition
 $duration: 400ms;
@@ -57,4 +58,14 @@ article figure{
   figcaption{
     text-decoration: underline;
   }
+}
+
+
+:not(pre) > code[class*="language-"]{
+  word-break: break-all;
+}
+
+article[class ^=Post__PostContent] a{
+  color: $primary;
+  text-decoration: underline;
 }
