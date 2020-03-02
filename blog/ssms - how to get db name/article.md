@@ -2,7 +2,9 @@
 date: "2019-05-21"
 title: "Have you ever forgotten your SQL server instance name?"
 tags: ['SQL', 'SSMS', 'DB']
-banner: ""
+banner: "https://res.cloudinary.com/bellons/image/upload/{format}/Code4IT/Covers/sqllocaldb.jpg"
+description : "Sometimes, when I open SQL Server Management Studio, I forget about my Local DB instance name. Here's how to retrieve it."
+slug: 'ssms-how-to-get-instance-name'
 ---
 
 This article is just a note for something I forget the most: my LocalDB instance names.

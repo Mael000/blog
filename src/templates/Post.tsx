@@ -120,7 +120,7 @@ export default class PostPage extends React.PureComponent<Props> {
                     {post.frontmatter.tags ? (
                       <TagsHolder>
                         {post.frontmatter.tags.map((tag, i) => (
-                          <Link key={i} to={`/tags/${kebabCase(tag)}`} title={tag} className="tag">
+                          <Link key={i} to={`/tags/${kebabCase(tag)}`} title={tag} className="article-tag">
                             <strong>{tag}</strong>
                           </Link>
                         ))}
