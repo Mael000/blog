@@ -25,11 +25,11 @@ Here you can set additional properties, like the key name and some restrictions.
 
 ## Get you Channel ID
 
-This information is really simple to get. Just access to your account, then navigate to [your advanced settings](https://www.youtube.com/account_advanced).
+This information is really simple to get. Just access your account, then navigate to [your advanced settings](https://www.youtube.com/account_advanced).
 
 ![YouTube channel settings](https://res.cloudinary.com/bellons/image/upload/Code4IT/youtube-search/yt-settings.png)
 
-Here you have info about your user id and you channel id. 
+Here you have info about your user id and your channel id. 
 
 Ok, now we have everything we need! It's time to go!
 
@@ -127,7 +127,7 @@ foreach (var responseVideo in searchListResponse.Items)
 }
 ```
 
-_Notice_: most of the interesting properties of a video are stored in the inner fields, like _Id.VideoId_ or _Snippet.Description_. Also, notice that __each element has 4 thumbnails__, one for each resolutions. Since some of them might be empty, you should select a fallback value.
+_Notice_: most of the interesting properties of a video are stored in the inner fields, like _Id.VideoId_ or _Snippet.Description_. Also, notice that __each element has 4 thumbnails__, one for each resolution. Since some of them might be empty, you should select a fallback value.
 
 ## Final result
 
@@ -156,4 +156,4 @@ searchListRequest.PageToken = nextPageToken;
 ## Wrapping up
 
 Here I searched for content on YouTube using .NET Core 3. 
-Just remember that the result data are about the search preview, so the description and the images are not the same that you would retrieve by analysing the detail of a single video. For example, the description field here is a shortened version of the real description of the video. You will see how to get those details in a separate article.
+Just remember that the result data are about the search preview, so the description and the images are not the same that you would retrieve by analyzing the detail of a single video. For example, the description field here is a shortened version of the real description of the video. You will see how to get those details in a separate article.
