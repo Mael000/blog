@@ -1,6 +1,6 @@
 ---
 date: "2020-03-02"
-title: "How to search for videos in a channel with .NET Core 3"
+title: "How to search for YouTube videos in a channel with .NET Core 3"
 tags: ['C#', '.NET Core', 'YouTube']
 banner: "https://res.cloudinary.com/bellons/image/upload/{format}/Code4IT/Covers/youtube-search.jpg"
 description : "YouTube provides some APIs for getting info about a channel videos. But they also provide .NET libraries to achieve the same result with C#. Let's have a try!"
