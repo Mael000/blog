@@ -2,8 +2,8 @@
 date: "2019-05-17"
 title: "An overview on API Gateways"
 tags: ['Azure', 'API Gateway', 'Ocelot']
-banner: ""
-description : ""
+banner: "https://res.cloudinary.com/bellons/image/upload/{format}/Code4IT/Covers/api-gateways.jpg"
+description : "When building complex systems, you might want keep things simple on your company but expose rich APIs to your customers. API Gateways can help you creating microservices and microfrontends."
 slug: 'overview-api-gateways'
 ---
 
@@ -19,17 +19,17 @@ There are different services that provide different complexity at different pric
 
 An interesting thing to do with API Gateways is UI Composition. 
 
-Imagine that you must show info that come from different services, for example the list of available products with few details about the product itself and info about the seller. You can handle this problem in 3 ways:
+Imagine that you must show info that comes from different services, for example the list of available products with few details about the product itself and info about the seller. You can handle this problem in 3 ways:
 
 1. call an API to get the list of all products an then call, for each product, another API to get the additional info, doing those operations directly from the client;
 2. create a single API function that returns all the info;
 3. use a Gateway that deals with all the operations from the backend and then returns the result as requested by the client.
 
-The method #1 is of course the slowest from client perspective. #2 is probably the most used in monolithic applications. #3 is optimal for microservice-based applications, considering that those microservices should return the minimum results possible to avoid overengineering. 
+The method #1 is of course the slowest from the client's perspective. #2 is probably the most used in monolithic applications. #3 is optimal for microservice-based applications, considering that those microservices should return the minimum results possible to avoid over-engineering. 
 
 ## Ocelot
 
-If you want to try API Gateways for simple project, I recommend you to have a look at [Ocelot](https://github.com/ThreeMammals/Ocelot). It is an __open source project__ that supports .NET Core. You can find the documentation [here](https://ocelot.readthedocs.io/en/latest/).
+If you want to try API Gateways for a simple project, I recommend you to have a look at [Ocelot](https://github.com/ThreeMammals/Ocelot). It is an __open source project__ that supports .NET Core. You can find the documentation [here](https://ocelot.readthedocs.io/en/latest/).
 
 It is an interesting project, easy to use and great to have an idea of what an API Gateway is. The definition of exposed functions is defined through a JSON file, which defines available routes and additional customizations.
 
@@ -37,7 +37,7 @@ Among its capabilities, you can handle routing, authorization and authentication
 
 ## Workaround for hiding public APIs
 
-APIs, being available through web, are by default discoverable (obviously excluding those on an intranet). But you might want to "hide" endpoints and provide access only to API Gateways. How can you do this? 
+APIs, being available through the web, are by default discoverable (obviously excluding those on an intranet). But you might want to "hide" endpoints and provide access only to API Gateways. How can you do this? 
 
 There's a quick and dirty workaround: insert a GUID in the URL. So if you want to obscure this endpoint:
 
@@ -60,7 +60,7 @@ With SSL Termination you move the burden of decryption from the server to the lo
 
 Another advantage of this technique is the simplified management of SSL certificates: while before you had to install that on each server, now you can use it only on the "exposed" endpoint.
 
-Of course, when the internal servers are in the same LAN there are more advantages.
+Of course, when the internal servers are on the same LAN there are more advantages.
 
 ## Final words
 
