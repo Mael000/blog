@@ -46,9 +46,9 @@ __PSSS! Remember not to use HTTPS!!__
 
 ## ICMP
 
-More in details, it sends an ICMP echo request to a specified interface and waits for a reply.
+More in detail, it sends an ICMP echo request to a specified interface and waits for a reply.
 
-Just as a reminder, [ICMP (_Internet Control Message Protocol_)](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol) is a network protocol that is at the same level of TCP and UDP on the networking stack, but it is typically not used for exchanging data between endpoint but only for sharing errors or information.
+Just as a reminder, [ICMP (_Internet Control Message Protocol_)](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol) is a network protocol that is at the same level as TCP and UDP on the networking stack, but it is typically not used for exchanging data between endpoints but only for sharing errors or information.
 
 ## Azure and ICMP
 
