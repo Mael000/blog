@@ -47,7 +47,10 @@ const MainImage = styled.div`
   background-position: center;
 `;
 
-const TagsHolder = styled.div``;
+const TagsHolder = styled.div`
+  margin: 0.5rem 0;
+  text-align: right;
+`;
 
 export class HomepageArticle extends React.PureComponent<Props> {
   public render() {
@@ -59,6 +62,13 @@ export class HomepageArticle extends React.PureComponent<Props> {
       <Card>
         <MainImage src={image} />
         <div>
+          <TagsHolder>
+            {(tags || []).map((tag, i) => (
+              <Link to={`/tags/${kebabCase(tag)}`} key={`arthp-${slug}-${i}`} title={tag} className="article-tag">
+                {tag}
+              </Link>
+            ))}
+          </TagsHolder>
           <Title>
             <Link to={`/blog/${slug}`} title={title}>
               {title}
@@ -70,14 +80,6 @@ export class HomepageArticle extends React.PureComponent<Props> {
               <div>
                 {date} &mdash; {timeToRead} Min Read
               </div>
-              <TagsHolder>
-                Tags:
-                {(tags || []).map((tag, i) => (
-                  <Link to={`/tags/${kebabCase(tag)}`} key={`arthp-${slug}-${i}`} title={tag} className="article-tag">
-                    {tag}
-                  </Link>
-                ))}
-              </TagsHolder>
             </div>
           </Subline>
         </div>
