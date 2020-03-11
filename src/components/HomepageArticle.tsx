@@ -10,6 +10,7 @@ const Title = styled.h2`
   position: relative;
   text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   margin-bottom: 0.75rem;
+  flex: 0;
 `;
 
 const Excerpt = styled.p`
@@ -27,6 +28,8 @@ const Card = styled.div`
     width: 100%;
     margin: 0.5rem 0;
   }
+  display: flex;
+  flex-direction: column;
 `;
 
 interface Props {
@@ -45,11 +48,20 @@ const MainImage = styled.div`
   background-image: url(${(props: any) => props.src});
   background-size: cover;
   background-position: center;
+  flex: 1;
+  min-height: 10rem;
 `;
 
 const TagsHolder = styled.div`
   margin: 0.5rem 0;
   text-align: right;
+  flex: 0;
+`;
+
+const ArticleData = styled.div`
+  flex: 2;
+  display: flex;
+  flex-direction: column;
 `;
 
 export class HomepageArticle extends React.PureComponent<Props> {
@@ -61,7 +73,7 @@ export class HomepageArticle extends React.PureComponent<Props> {
     return (
       <Card>
         <MainImage src={image} />
-        <div>
+        <ArticleData>
           <TagsHolder>
             {(tags || []).map((tag, i) => (
               <Link to={`/tags/${kebabCase(tag)}`} key={`arthp-${slug}-${i}`} title={tag} className="article-tag">
@@ -74,15 +86,13 @@ export class HomepageArticle extends React.PureComponent<Props> {
               {title}
             </Link>
           </Title>
-          <Subline>
+          <Subline className={'SublineWithSpaceBetween'}>
             <Excerpt>{excerpt}</Excerpt>
             <div>
-              <div>
-                {date} &mdash; {timeToRead} Min Read
-              </div>
+              {date} &mdash; {timeToRead} Min Read
             </div>
           </Subline>
-        </div>
+        </ArticleData>
       </Card>
     );
   }
