@@ -1,19 +1,21 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import { Link, graphql } from 'gatsby';
-import styled from 'styled-components';
-import kebabCase from 'lodash/kebabCase';
-import { Layout, Wrapper, Header, Subline, SEO, PrevNext, SectionTitle, Content } from '../components';
-import config from '../../config/SiteConfig';
 import '../utils/prismjs-theme.css';
+
+import { graphql, Link } from 'gatsby';
+import { Disqus } from 'gatsby-plugin-disqus';
+import kebabCase from 'lodash/kebabCase';
+import moment from 'moment';
+import React from 'react';
+import { isMobile } from 'react-device-detect';
+import Helmet from 'react-helmet';
+import styled from 'styled-components';
+
+import config from '../../config/SiteConfig';
+import { Content, Header, Layout, PrevNext, SectionTitle, SEO, Subline, Wrapper } from '../components';
+import { MainNavigation } from '../components/MainNavigation';
+import { ShareButtons } from '../components/ShareButtons';
 import PathContext from '../models/PathContext';
 import Post from '../models/Post';
-import { MainNavigation } from '../components/MainNavigation';
 import { media } from '../utils/media';
-import { isMobile } from 'react-device-detect';
-import moment from 'moment';
-import { ShareButton, ShareButtons } from '../components/ShareButtons';
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -65,10 +67,12 @@ const TagsHolder = styled.section`
   flex-wrap: wrap;
 `;
 
-const PostDescription = styled.p`
+const PostDescription = styled.div`
   padding: 1rem 1rem 0 1rem;
   text-align: center;
 `;
+
+const PostArticle = styled.div``;
 
 interface Props {
   data: {
@@ -128,7 +132,7 @@ export default class PostPage extends React.PureComponent<Props> {
                       </PostDescription>
                     ) : null}
 
-                    <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                    <PostArticle dangerouslySetInnerHTML={{ __html: post.html }} />
                   </PostContent>
                   <PostSidebar>
                     {post.frontmatter.tags ? (
