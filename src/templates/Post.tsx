@@ -65,6 +65,11 @@ const TagsHolder = styled.section`
   flex-wrap: wrap;
 `;
 
+const PostDescription = styled.p`
+  padding: 1rem 1rem 0 1rem;
+  text-align: center;
+`;
+
 interface Props {
   data: {
     markdownRemark: Post;
@@ -115,7 +120,16 @@ export default class PostPage extends React.PureComponent<Props> {
             <Wrapper fullWidth={isFullWidth}>
               <Content>
                 <ContentWrapper>
-                  <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
+                  <PostContent>
+                    {post.frontmatter?.description ? (
+                      <PostDescription>
+                        <strong>{post.frontmatter.description}</strong>
+                        <div className="separator" />
+                      </PostDescription>
+                    ) : null}
+
+                    <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                  </PostContent>
                   <PostSidebar>
                     {post.frontmatter.tags ? (
                       <TagsHolder>

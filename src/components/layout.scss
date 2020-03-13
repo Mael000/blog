@@ -78,3 +78,8 @@ article[class ^=Post__PostContent] a{
   flex-direction: column;
   justify-content: space-between;
 }
+
+div .separator{
+  border: solid 0.5px $grey;
+  margin: 1rem 20%;
+}
