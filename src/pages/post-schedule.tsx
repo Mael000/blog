@@ -35,7 +35,11 @@ export default class PostSchedulePage extends React.PureComponent<any> {
                 {post.map((p, i) => (
                   <tr key={i}>
                     <td>{p.frontmatter.date}</td>
-                    <td>{p.frontmatter.title}</td>
+                    <td>
+                      <Link to={`../blog/${p.frontmatter.slug || p.slug}`} title={p.frontmatter.title}>
+                        {p.frontmatter.title}
+                      </Link>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -51,9 +55,13 @@ export const postSchedule = graphql`
   {
     allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
+        fields {
+          slug
+        }
         frontmatter {
           title
           date
+          slug
         }
       }
     }

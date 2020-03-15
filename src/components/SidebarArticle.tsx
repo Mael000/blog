@@ -51,7 +51,7 @@ export class SidebarArticle extends React.PureComponent<Props> {
           <TagsHolder>
             Tags:
             {(tags || []).map((tag, i) => (
-              <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`} title={tag} className="tag">
+              <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`} title={tag} className="article-tag">
                 {tag}
               </Link>
             ))}
