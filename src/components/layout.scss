@@ -40,7 +40,7 @@ $duration: 400ms;
 $easing: ease;
 
 
-.article-tag{
+a.article-tag{
   border-bottom: solid;
   border-right: solid;
   border-radius: 50vh;
@@ -48,6 +48,7 @@ $easing: ease;
   background: lightgray;
   margin-left: 4px;
   padding: 0 5px;
+  color: $grey-dark;
 }
 
 article figure{
@@ -68,4 +69,17 @@ article figure{
 article[class ^=Post__PostContent] a{
   color: $primary;
   text-decoration: underline;
+}
+
+
+.SublineWithSpaceBetween{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+div .separator{
+  border: solid 0.5px $grey;
+  margin: 1rem 20%;
 }

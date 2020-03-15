@@ -3,7 +3,7 @@ date: "2019-05-17"
 title: "An overview on API Gateways"
 tags: ['Azure', 'API Gateway', 'Ocelot']
 banner: "https://res.cloudinary.com/bellons/image/upload/{format}/Code4IT/Covers/api-gateways.jpg"
-description : "When building complex systems, you might want keep things simple on your company but expose rich APIs to your customers. API Gateways can help you creating microservices and microfrontends."
+description : "When building complex systems, you might want to keep things simple on your company but expose rich APIs to your customers. API Gateways can help you while creating microservices and microfrontends."
 slug: 'overview-api-gateways'
 ---
 

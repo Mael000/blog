@@ -47,9 +47,7 @@ export class SidebarArticle extends React.PureComponent<Props> {
         </Title>
         <Subline>
           {date}
-          {/* {moment.parseZone(date, '').format(config.DateTimeFormat)} */}
           <TagsHolder>
-            Tags:
             {(tags || []).map((tag, i) => (
               <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`} title={tag} className="article-tag">
                 {tag}
