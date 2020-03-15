@@ -46,10 +46,16 @@ a.article-tag{
   border-radius: 50vh;
   border-color: gray;
   background: lightgray;
-  margin-left: 4px;
   padding: 0 5px;
   color: $grey-dark;
+
+  &:not(:first-of-type){
+  margin-left: 4px;
+
 }
+
+}
+
 
 article figure{
   display: flex;

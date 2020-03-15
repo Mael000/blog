@@ -24,7 +24,7 @@ This website is built on the top of a GatsbyJS starter project, that you can fin
 
 ### How to try it
 
-If you want, you can fork this project and try it. Once you have downloaded the code, you must install the NPM dependencies with npm install. Then you can run the code with gatsby develop. That's it!
+If you want, you can fork this project and try it. Once you have downloaded the code, you must install NodeJS, then install the NPM dependencies with `npm install`. Finally you can run the code with `gatsby develop`. That's it!
 
 ### How to contribute
 
@@ -37,7 +37,7 @@ If you want to contribute, you can:
 
 ### How NOT to contribute
 
-* If you find errors about the __topic of the article__, or you want to add more info about a concept, don't do it here. Please, write your comment directly on the website. Since I'm writing this blog so that I can share and learn at the same time, if there is something that other can learn too thanks to your content, I'd like the give them the possibility to access it in the easiest way. 
-
+If you find errors about the __topic of the article__, or you want to add more info about a concept, don't do it here. Please, write your comment directly on the website. 
+Since I'm writing this blog so that I can share and learn at the same time, if there is something that other can learn too thanks to your content, I'd like the give them the possibility to access it in the easiest way. 
 
 __THANK YOU!__
