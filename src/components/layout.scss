@@ -89,3 +89,17 @@ div .separator{
   border: solid 0.5px $grey;
   margin: 1rem 20%;
 }
+
+ 
+.post-schedule[data-year^="2020"]{
+  background-color: #b5e7a0;
+}
+.post-schedule[data-year^="2019"]{
+  background-color: #e3eaa7;
+}
+.post-schedule[data-year^="2018"]{
+  background-color: #d5e1df;
+}
+.post-schedule.new{
+  background-color: initial;
+}
