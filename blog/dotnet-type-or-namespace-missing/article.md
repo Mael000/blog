@@ -2,8 +2,8 @@
 date: "2019-08-26"
 title: "Resolving type or namespace not found in .NET Core"
 tags: [".NET"]
-banner: ""
-description : "Resolving error CS0246 - Type or namespace could not be found."
+banner: "https://res.cloudinary.com/bellons/image/upload/{format}/Code4IT/Covers/type-not-found.jpg"
+description : "Error CS0246 - Type or namespace could not be found. What does it mean? Why does it happen? How can you solve it?"
 slug: 'dotnet-type-or-namespace-not-found'
 ---
 
@@ -36,4 +36,6 @@ So, I just downgraded the class library version through Visual Studio, and every
 
 You can find the version in the Properties screen of the project (right-click on the project in the Solution Explorer or _Alt+Enter_), in the _Application_ tab, then under the _Target framework_ field.
 
-So, the lesson is: _know your enemy_.
+![.NET version selection on Visual Studio 2019](https://res.cloudinary.com/bellons/image/upload/Code4IT/TypeOrNamespace%20not%20found/dotnet-version-selector.png)
+
+So, the lesson is: _know your enemy_, and check for the slight details.
