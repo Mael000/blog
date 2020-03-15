@@ -1,8 +1,8 @@
 {
   "name": "gatsby-starter-typescirpt-power-blog",
-  "description": "gatsyby blog template with typescript and tslint",
+  "description": "A blog created by Davide Bellone",
   "version": "1.0.0",
-  "author": "Majid Hajian ( mhadaily@gmail.com )",
+  "author": "Davide Bellone",
   "keywords": [
     "gatsby, typescript",
     "blog"
