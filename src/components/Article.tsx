@@ -55,7 +55,6 @@ export class Article extends React.PureComponent<Props> {
         <Subline>
           {date} &mdash; {timeToRead} Min Read
           <TagsHolder>
-            Tags:
             {(tags || []).map((tag, i) => (
               <Link to={`/tags/${kebabCase(tag)}`} key={`art-${slug}-${i}`} title={tag} className="article-tag">
                 {tag}
