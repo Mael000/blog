@@ -95,7 +95,7 @@ export default class PostPage extends React.PureComponent<Props> {
 
     const image = (post?.frontmatter?.banner || config.defaultArticleBanner).replace('{format}', imageFormat);
 
-    const slug = post.frontmatter.slug || kebabCase(post.frontmatter.title);
+    const slug = post?.frontmatter?.slug || kebabCase(post?.frontmatter?.title);
 
     const fullUrl = this.componeUrl(config.siteUrl, config.blogPath, slug);
 
