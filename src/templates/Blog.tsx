@@ -1,12 +1,13 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
-import { Layout, Article, Wrapper, SectionTitle, Header, Content, Pagination } from '../components';
-import Helmet from 'react-helmet';
-import config from '../../config/SiteConfig';
-import Data from '../models/Data';
-import { MainNavigation } from '../components/MainNavigation';
-import { formatDistance } from 'date-fns';
+import { graphql, Link } from 'gatsby';
 import moment from 'moment';
+import React from 'react';
+import Helmet from 'react-helmet';
+
+import config from '../../config/SiteConfig';
+import { Article, Content, Header, Layout, Pagination, SectionTitle, Wrapper } from '../components';
+import { MainNavigation } from '../components/MainNavigation';
+import Data from '../models/Data';
+
 interface Props {
   data: Data;
   pageContext: {
@@ -39,7 +40,7 @@ export default class BlogPage extends React.Component<Props> {
               <Article
                 title={post.node.frontmatter.title}
                 date={moment(post.node.frontmatter.date).format(config.DateTimeFormat)}
-                excerpt={post.node.excerpt}
+                excerpt={post.node.frontmatter?.description || post.node.excerpt}
                 timeToRead={post.node.timeToRead}
                 slug={post.node.frontmatter.slug || post.node.fields.slug}
                 key={post.node.frontmatter.slug || post.node.fields.slug}

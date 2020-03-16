@@ -1,6 +1,7 @@
 import React, { Props } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { media } from '../utils/media';
 
 export const Nav = styled.nav`
   background-color: #000000b3;
@@ -16,7 +17,11 @@ export const NavItem = styled.div`
   flex: 1;
   text-align: center;
 
-  min-width: 6rem;
+  min-width: 7rem;
+  @media ${media.phone} {
+    padding: 0.2rem 0;
+  }
+
   a {
     color: white;
   }
@@ -29,6 +34,11 @@ export class MainNavigation extends React.PureComponent<Props> {
         <NavItem>
           <Link to={'/blog'} title="blog">
             All articles{' '}
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link to={'/tags'} title="All tags">
+            All tags{' '}
           </Link>
         </NavItem>
         <NavItem>

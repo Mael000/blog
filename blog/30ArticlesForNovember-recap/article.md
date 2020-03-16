@@ -62,7 +62,7 @@ Here's the recap
 > Try [EF Core](https://www.thereformedprogrammer.net/> an-in-depth-study-of-cosmos-db-and-ef-core-3-0-database-provider), but pay attention.
 > 
 > ---
-> << [Unit of work](https://gunnarpeipman.com/ef-core-repository-unit-of-work/)! I'll start from here>>, 
+>  «[Unit of work](https://gunnarpeipman.com/ef-core-repository-unit-of-work/)! I'll start from here», 
 > 
 > or maybe Dapper, and something more?
 > 
@@ -80,9 +80,9 @@ Here's the recap
 > Take care of [Garbage Collection](https://docs.microsoft.com/en-us/aspnet/core/performance/memory?> view=aspnetcore-3.0).
 > 
 > ---
-> << I wanna all remote! Remote [work](https://doist.com/blog/mental-health-and-remote-work), remote  [calls](https://devblogs.microsoft.com/aspnet/grpc-vs-http-apis/)! >>. 
+> «I wanna all remote! Remote [work](https://doist.com/blog/mental-health-and-remote-work), remote  [calls](https://devblogs.microsoft.com/aspnet/grpc-vs-http-apis/)!». 
 > 
-> If your boss allows it, just say <<Thanks!>>
+> If your boss allows it, just say «Thanks!»
 > 
 > If not, don't break his balls.
 > 
