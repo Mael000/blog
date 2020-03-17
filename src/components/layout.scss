@@ -55,6 +55,10 @@ a.article-tag{
 }
 
 }
+a.anchor{
+  position: inherit !important;
+  float: right
+}
 
 
 article figure{
@@ -75,6 +79,21 @@ article figure{
 article[class ^=Post__PostContent] a{
   color: $primary;
   text-decoration: underline;
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+  height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 90%;
+	height: 90%;
 }
 
 
