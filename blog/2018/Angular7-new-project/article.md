@@ -7,7 +7,7 @@ description : "Are you ready to create a brand new Angular project? The CLI can 
 slug: 'angular7-create-new-project'
 ---
 
-Before reading this article, be sure you know what __Node.js__, __NPM__ and __Angular__ are. If you are not sure, [here's a short reminder](https://www.code4it.dev/blog/angular-vs-npm-vs-node-js).
+Before reading this article, be sure you know what __Node.js__, __NPM__ and __Angular__ are. If you are not sure, [here's a short reminder](https://www.code4it.dev/blog/angular-vs-npm-vs-node-js "A recap of Node.js, NPM and Angular").
 
 In this article, I'm gonna use the __Angular CLI (Command line interface)__ to create a simple Angular project. I have the version 6.2.0 of @angular/cli installed on my system. I know, Angular CLI v7 has recently been released, but these options are still valid.
 
@@ -17,7 +17,7 @@ The ng new command allows you to create a new Angular project. You have to navig
 
 Run `ng new --help`. You'll see something like this:
 
-![ng new --help](https://res.cloudinary.com/bellons/image/upload/Code4IT/Start%20new%20Angular%20project/ng-new_yshndw.png)
+![ng new --help](https://res.cloudinary.com/bellons/image/upload/Code4IT/Start%20new%20Angular%20project/ng-new_yshndw.png "ng new --help command")
  
 This is the list of available options. In this article I'll show you the most important ones, for me, to have a go with a project.
 
@@ -25,7 +25,7 @@ This is the list of available options. In this article I'll show you the most im
 
 One of the least used options (but one of the most useful) is `--dry-run`, that gives you a preview of the file generated with the command without really creating the files.
  
- ![ng new dry-run](https://res.cloudinary.com/bellons/image/upload/v1566593436/Code4IT/Start%20new%20Angular%20project/ng-new-dry-run_xnkqok.png)
+ ![ng new --dry-run](https://res.cloudinary.com/bellons/image/upload/v1566593436/Code4IT/Start%20new%20Angular%20project/ng-new-dry-run_xnkqok.png "ng new --dry-run command")
  
 
 As you can see in the above picture, the _--dry-run_ (or the alias -d) shows you the file that would be created if you run the command without the --dry-run option. The yellow note confirms that the files weren't actually created, but that was a simulation.
@@ -48,7 +48,7 @@ Common sense makes you think that the available values would be CSS, SCSS and LE
 
 In the example below I set the value to _foo_.
 
- ![ng new --style=foo](https://res.cloudinary.com/bellons/image/upload/v1566593493/Code4IT/Start%20new%20Angular%20project/ng-new-style-foo_z1ias2.png) 
+ ![ng new --style=foo](https://res.cloudinary.com/bellons/image/upload/v1566593493/Code4IT/Start%20new%20Angular%20project/ng-new-style-foo_z1ias2.png "ng new --style") 
  
 ### --routing
 
@@ -56,7 +56,7 @@ Routing is one of the keys of the success of Angular, and of course of Angular-b
 
 With the `--routing` option you can tell the CLI to create the Routing Module and to add it to the AppModule.
 
- ![ng new --routing](https://res.cloudinary.com/bellons/image/upload/v1566593528/Code4IT/Start%20new%20Angular%20project/ng-new-routing_v4sils.png)
+ ![ng new --routing](https://res.cloudinary.com/bellons/image/upload/v1566593528/Code4IT/Start%20new%20Angular%20project/ng-new-routing_v4sils.png "ng new --routing")
 
 
 ## --prefix
@@ -68,7 +68,7 @@ To change the default prefix you can use the --prefix option:
 `ng new my-project --prefix=foo`
 
 This will set the default prefix to _foo_ for the whole application, updating also the corresponding property in the _angular.json_ file.
-![ng new --prefix](https://res.cloudinary.com/bellons/image/upload/v1566593565/Code4IT/Start%20new%20Angular%20project/ng-new-prefix_xa87mr.png)
+![ng new --prefix](https://res.cloudinary.com/bellons/image/upload/v1566593565/Code4IT/Start%20new%20Angular%20project/ng-new-prefix_xa87mr.png "ng new --prefix")
 
 Note: the prefix isn't about the name of the components and directives, but only the way they are referenced in the templates.
 
