@@ -7,14 +7,13 @@ description : "The CollectionAssert class if fine for basic tests on collections
 slug: 'mstests-collectionassert-overview'
 ---
 
-This is the third part of our journey. In the [first part](./mstests-assert-overview) we listed the methods belonging to the __Assert__ class, while in the [second part](./mstests-stringassert-overview) we had a look at the __StringAssert__ class. 
+This is the third part of our journey. In the [first part](./mstests-assert-overview "Unit testing with Assert") we listed the methods belonging to the __Assert__ class, while in the [second part](./mstests-stringassert-overview "Unit testing with StringAssert") we had a look at the __StringAssert__ class.
 
 Now we'll deep dive into the CollectionAssert class, that is a good fit for ensuring that a collection of elements follows desired specifications.
 
 ## Introduction to CollectionAssert
 
-[This class](https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.collectionassert) tests various conditions associated with collections, like tests about the type of the elements. It is important to say that this class does not check if every element in the collection follows a certain rule (like "The ID must be greater than 0"), but it's more about __high level checks__.
-
+[This class](https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.collectionassert "CollectionAssert class on Microsoft") tests various conditions associated with collections, like tests about the type of the elements. It is important to say that this class does not check if every element in the collection follows a certain rule (like "The ID must be greater than 0"), but it's more about __high level checks__.
 
 For these examples I'll reuse two classes created for the first article of this series: _User_ and _AdminUser_: the second class extends the first one:
 
@@ -33,6 +32,7 @@ public class AdminUser : User
 ```
 
 ## CollectionAssert.AllItemsAreInstancesOfType
+
 With this method we can check if all the elements belonging to a collection are of the same type. 
 
 A simple example could be the one with a list of strings.
@@ -333,7 +333,7 @@ We had a review of the `CollectionAssert` class. I think it is very useful for c
 ## Conclusion
 This is the end of this journey through pain and joy. As you can see, MSTest is fine for basic tests, but if you want something more complete I suggest to use other libraries.
 
-My favorite, by now, is [FluentAssertion](https://fluentassertions.com). It replaces the `Assert` class with a syntax that allows you to create more complex tests. It is more readable (well, _fluent_) and a test looks like:
+My favorite, by now, is [FluentAssertion](https://fluentassertions.com "FluentAssertion website"). It replaces the `Assert` class with a syntax that allows you to create more complex tests. It is more readable (well, _fluent_) and a test looks like:
 
 ```csharp
 [TestMethod]

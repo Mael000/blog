@@ -17,19 +17,19 @@ First of all, you need to retrieve two information: your _API key_ and your _cha
 
 In order to use YouTube APIs, you need a developer key.
 
-You can get it by simply visiting [the Google developers page](https://console.developers.google.com/getting-started), where you can set up a new project (it's just a grouping of functionalities) and then navigate to the _Credentials_ page where you can create the key.
+You can get it by simply visiting [the Google developers page](https://console.developers.google.com/getting-started "Google developer console page"), where you can set up a new project (it's just a grouping of functionalities) and then navigate to the _Credentials_ page where you can create the key.
 
-![Credentials page for getting API keys](https://res.cloudinary.com/bellons/image/upload/Code4IT/youtube-search/Credential-page.png)
+![Credentials page for getting API keys](https://res.cloudinary.com/bellons/image/upload/Code4IT/youtube-search/Credential-page.png "How to get API keys")
 
 Here you can set additional properties, like the key name and some restrictions.
 
 ## Get you Channel ID
 
-This information is really simple to get. Just access your account, then navigate to [your advanced settings](https://www.youtube.com/account_advanced).
+This information is really simple to get. Just access your account, then navigate to [your advanced settings](https://www.youtube.com/account_advanced "YouTube advanced settings page").
 
-![YouTube channel settings](https://res.cloudinary.com/bellons/image/upload/Code4IT/youtube-search/yt-settings.png)
+![YouTube channel settings](https://res.cloudinary.com/bellons/image/upload/Code4IT/youtube-search/yt-settings.png "How to get YouTube channel ID")
 
-Here you have info about your user id and your channel id. 
+Here you have info about your user id and your channel ID.
 
 Ok, now we have everything we need! It's time to go!
 
@@ -51,6 +51,7 @@ public class YouTubeVideo
     public string Picture { get; set; }
 }
 ```
+
 Nothing difficult. Just notice that I have 2 fields for the images: one for the Thumbnail and another for the main Picture.
 
 ## Add a YouTube Service
@@ -81,14 +82,15 @@ searchListRequest.ChannelId = '<your-channel-id>';
 searchListRequest.Type = "video";
 searchListRequest.Order = SearchResource.ListRequest.OrderEnum.Relevance;
 ```
+
 The `YouTubeService` class contains references to most of the capabilities provided by YouTube, such as _Search_, _Video details_, _Channels_, _Captions_ and so on. Here we are interested in the Search functionality, so we must set it as "endpoint" and define where we want to search.
 
 _Confession time!_ I still haven't figured out what the _snippet_ value means, and if there are other values. Every example in the documentation use this value.
 
 The parameters meaning is straightforward. But just a consideration: since the service searches for each part of YouTube, __you can restrict the type of content that you want__. Here I set "video", but you can use a combination of "video", "channel" and "playlist", separated by a comma. 
 
-
 Now that we have set our search parameters, we can get the results:
+
 ```csharp
 var searchListResponse = await searchListRequest.ExecuteAsync();
 ```
@@ -131,8 +133,7 @@ _Notice_: most of the interesting properties of a video are stored in the inner 
 
 ## Final result
 
-Now you have all the info you need! You can have a look at a complete example on [my GitHub account](https://github.com/bellons91/youtube-search). I have done a bit of refactoring: now the method is wrapped into an async method, and the configurations are stored outside the method.
-
+Now you have all the info you need! You can have a look at a complete example on [my GitHub account](https://github.com/bellons91/youtube-search "GitHub repository for this article"). I have done a bit of refactoring: now the method is wrapped into an async method, and the configurations are stored outside the method.
 
 ## The pagination issue
 
@@ -141,7 +142,6 @@ As you might have noticed, I didn't mention the pagination.
 YouTube uses a curious way to handle it: instead of allowing you to set the current page (or the typical skip and limit parameters), __it returns a token for the next page and a token for the previous page__.
 
 In fact, the _searchListResponse_ contains two properties, `NextPageToken` and `PrevPageToken` that must be used for the pagination. So you must save the token somewhere and use it as a parameter of `searchListRequest`.
-
 
 ```csharp
 

@@ -22,7 +22,7 @@ You can just copy and paste, right? Nah, too easy! 😁
 
 ## Initial steps
 
-The basic setup is the same I explained in [my previous article](https://www.code4it.dev/blog/search-youtube-videos-dotnet) about how to search for videos on a YouTube channel.
+The basic setup is the same I explained in [my previous article](https://www.code4it.dev/blog/search-youtube-videos-dotnet "My article about how to search for videos on YouTube") about how to search for videos on a YouTube channel.
 
 What you need to do is:
 
@@ -42,7 +42,7 @@ public class YouTubeVideoDetails
 }
 ```
 
-Also, since you want to get the details of a video, you need the VideoId. You can retrieve it in 2 ways: programmatically, using the procedure from the previous article, or analysing the YouTube URL: if we have https://www.youtube.com/watch?v=CzvQxQYKO88, the id is _CzvQxQYKO88_.
+Also, since you want to get the details of a video, you need the VideoId. You can retrieve it in 2 ways: programmatically, using the procedure from the previous article, or analyzing the YouTube URL: if we have https://www.youtube.com/watch?v=CzvQxQYKO88, the id is _CzvQxQYKO88_.
 
 Now we have everything we need. Let's go!
 
@@ -74,6 +74,7 @@ Once we have created the request, we need to retrieve the result:
 ```csharp
 var searchResponse = await searchRequest.ExecuteAsync();
 ```
+
 The searchResponse object contains various information shared with other services, like pagination. We don't need those info, and we can go straight to the video details:
 
 ```csharp
@@ -93,9 +94,10 @@ Finally, we can populate our YouTueVideoDetails object:
                 };
 ```
 
-The `youTubeVideo` object contains references to the thumbnails. As you might remember, in the article about [how to search for videos](https://www.code4it.dev/blog/search-youtube-videos-dotnet) associated to a YouTube channel, I explained that the images that you get with the _Search_ endpoint are different to the ones here, in the _Videos_ endpoint. My suggestion is to try both the examples on my GitHub page (see below) and find the differences.
+The `youTubeVideo` object contains references to the thumbnails. As you might remember, in the article about [how to search for videos](https://www.code4it.dev/blog/search-youtube-videos-dotnet "How to search for YT videos") associated to a YouTube channel, I explained that the images that you get with the _Search_ endpoint are different to the ones here, in the _Videos_ endpoint. My suggestion is to try both the examples on my GitHub page (see below) and find the differences.
 
 ## Final result
+
 Ok, we are ready to join all the pieces of the puzzle!
 
 ```csharp
@@ -126,7 +128,7 @@ public async Task<YouTubeVideoDetails> GetVideoDetails()
     return videoDetails;
 }
 ```
-You can see a full example on this [GitHub repository](https://github.com/bellons91/youtube-video-details).
 
+You can see a full example on this [GitHub repository](https://github.com/bellons91/youtube-video-details "GitHub repository for this article").
 
 Now we have the lyrics, and we are ready to learn about macroeconomics, power metal and inflation! Enjoy!
