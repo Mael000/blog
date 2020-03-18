@@ -13,7 +13,7 @@ Also, for big organizations, it can happen that a team is used to work on the .N
 
 __API Gateways__ allow you to create services with completely different technologies: since one of the best practices is to have all the APIs detached from the others, having __different stacks__ is definitely not a problem. Considering that those services can live on their own, you can make them very small and provide __common functionalities at API Gateway level__: examples are documentation, error handling, authentication and general logging. 
 
-There are different services that provide different complexity at different prices, like [Azure API Management](https://azure.microsoft.com/en-us/services/api-management/), [Amazon API Gateway](https://aws.amazon.com/api-gateway/) and [Ocelot](https://github.com/ThreeMammals/Ocelot).
+There are different services that provide different complexity at different prices, like [Azure API Management](https://azure.microsoft.com/en-us/services/api-management/ "Azure API Management reference"), [Amazon API Gateway](https://aws.amazon.com/api-gateway/ "Amazon AWS API Gateway reference") and [Ocelot](https://github.com/ThreeMammals/Ocelot "Ocelot repository").
 
 ## UI Composition
 
@@ -29,7 +29,7 @@ The method #1 is of course the slowest from the client's perspective. #2 is prob
 
 ## Ocelot
 
-If you want to try API Gateways for a simple project, I recommend you to have a look at [Ocelot](https://github.com/ThreeMammals/Ocelot). It is an __open source project__ that supports .NET Core. You can find the documentation [here](https://ocelot.readthedocs.io/en/latest/).
+If you want to try API Gateways for a simple project, I recommend you to have a look at [Ocelot](https://github.com/ThreeMammals/Ocelot "Ocelot GitHub link"). It is an __open source project__ that supports .NET Core. You can find the documentation [here](https://ocelot.readthedocs.io/en/latest/ "Ocelot documentation").
 
 It is an interesting project, easy to use and great to have an idea of what an API Gateway is. The definition of exposed functions is defined through a JSON file, which defines available routes and additional customizations.
 

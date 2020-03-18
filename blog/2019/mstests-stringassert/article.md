@@ -8,11 +8,11 @@ slug: 'mstests-stringassert-overview'
 ---
 
 
-This is the second part of our journey through the Unit Test classes provided with VisualStudio. We [already had a look](./mstests-assert-overview) at the `Assert` class, where had a glimpse of its methods. Now we'll have a look at the **StringAssert** class, that, as you can imagine, provides some useful methods for string evaluation.
+This is the second part of our journey through the Unit Test classes provided with VisualStudio. We [already had a look](./mstests-assert-overview "My previous article about the Assert class") at the `Assert` class, where had a glimpse of its methods. Now we'll have a look at the **StringAssert** class, that, as you can imagine, provides some useful methods for string evaluation.
 
 ## The StringAssert class
 
-[This class](https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.stringassert) belongs to the `Microsoft.VisualStudio.TestTools.UnitTesting` namespace. It's a small class with few methods: maybe that's the reason it is not preferred over the Assert class when testing a string.  
+[This class](https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.stringassert "StringAssert documentation") belongs to the `Microsoft.VisualStudio.TestTools.UnitTesting` namespace. It's a small class with few methods: maybe that's the reason it is not preferred over the Assert class when testing a string.  
 
 ### StringAssert.Contains
 

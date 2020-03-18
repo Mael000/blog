@@ -36,6 +36,6 @@ So, I just downgraded the class library version through Visual Studio, and every
 
 You can find the version in the Properties screen of the project (right-click on the project in the Solution Explorer or _Alt+Enter_), in the _Application_ tab, then under the _Target framework_ field.
 
-![.NET version selection on Visual Studio 2019](https://res.cloudinary.com/bellons/image/upload/Code4IT/TypeOrNamespace%20not%20found/dotnet-version-selector.png)
+![.NET version selection on Visual Studio 2019](https://res.cloudinary.com/bellons/image/upload/Code4IT/TypeOrNamespace%20not%20found/dotnet-version-selector.png "How to select .NET version on Visual Studio 2019")
 
 So, the lesson is: _know your enemy_, and check for the slight details.
