@@ -102,7 +102,7 @@ export default class PostPage extends React.PureComponent<Props> {
     const disqusConfig = {
       url: `${fullUrl}`,
       identifier: slug,
-      title: post.frontmatter.title,
+      title: post?.frontmatter?.title,
     };
 
     return (
