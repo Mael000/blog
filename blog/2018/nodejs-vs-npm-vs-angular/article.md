@@ -9,18 +9,18 @@ There's a lot of confusion about Node.js, NPM and Angular. These 3 "entities" ar
 
 Let's make it clear!
 
-![Typical structure of an Angular Application](https://dius.imgix.net/2015/01/Screen-Shot-2015-02-17-at-12.04.46-pm.png)
+![Typical structure of an Angular Application](https://dius.imgix.net/2015/01/Screen-Shot-2015-02-17-at-12.04.46-pm.png "Angular application structure")
 
 
 ## Node.js
 
-Node.js is a __server environment__ based on JavaScript. You can download it from the [official site](https://nodejs.org/) and run it on Windows, Linux, Mac, etc.
+Node.js is a __server environment__ based on JavaScript. You can download it from the [official site](https://nodejs.org/ "Node.js website") and run it on Windows, Linux, Mac, etc.
 
 __Node.js uses asynchronous programming__: while a typical server handles one request per time (thus creating overhead while waiting for the request completion), Node.js accepts all the request, and handles them one by one in a manner that does not block other requests. This is obviously very efficient.
 
 ## NPM
 
-[NPM](https://www.npmjs.com/package/npm) is the package manager for Node.js packages. It contains thousands of free packages available to download; also, via command line, it's easy to download and update those packages.
+[NPM](https://www.npmjs.com/package/npm "NPM website") is the package manager for Node.js packages. It contains thousands of free packages available to download; also, via command line, it's easy to download and update those packages.
 
 NPM is commonly used with Node.js, so it is installed with the server environment.
 

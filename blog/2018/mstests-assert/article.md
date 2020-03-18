@@ -41,7 +41,7 @@ Note 1: the Assert class is not native of C#: its namespace is `Microsoft.Visual
 
 Note 2: you cannot create sub-classes since __this class is sealed__.
 
-This class provides the most general checks, those based on equality and general assertions. You can find the documentation [at this page](https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert).
+This class provides the most general checks, those based on equality and general assertions. You can find the documentation [at this page](https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert "Unit testing page on Microsoft docs").
 
 For almost every method I'll show in this article there is a specular method that checks if the condition is not verified. For Assert.IsTrue there is Assert.IsFalse, for Assert.AreEqual there is Assert.AreNotEqual and so on. The only exception here is the _ThrowsException_ method.
 
@@ -51,7 +51,7 @@ Every method has two overrides that allow you to add an error message as a strin
 
 With these methods you can check if a generic condition is true or false.
 
-```
+``` csharp
 [TestMethod]  
  public void TestIsTrue()  
  {  
@@ -59,6 +59,7 @@ With these methods you can check if a generic condition is true or false.
      Assert.IsTrue(x > 15);  
  }
  ```
+
 ## Assert.AreEqual
 
 This methods checks if the two parameters have the same value or not.
@@ -78,6 +79,7 @@ For each type passed as parameter there are different parameters.
      Assert.AreEqual(expected, actual);  
  }
  ```
+
 You can check if two Int are equals. But you can use also Int16, Int32 and Int64 to be compared:
 
 ```csharp
@@ -154,7 +156,7 @@ You might think "Do I really need to check for the culture?". Usually not, unles
 
 #### The Turkish i problem
 
-Have you ever heard of the _Turkish I problem_? In short, for the Turkish alphabet __the uppercase _i_ is not _I_, but *İ*__. You can see a more detailed article [here](https://haacked.com/archive/2012/07/05/turkish-i-problem-and-why-you-should-care.aspx).
+Have you ever heard of the _Turkish I problem_? In short, for the Turkish alphabet __the uppercase _i_ is not _I_, but *İ*__. You can see a more detailed article [here](https://haacked.com/archive/2012/07/05/turkish-i-problem-and-why-you-should-care.aspx "Turkish I problem article").
 
 So when comparing strings you should keep this problem in mind.
 
@@ -198,7 +200,7 @@ Now have a look at this test:
 
 Will the test pass? The answer is... NO! Why?
 
-Well, the two objects look identical, and have the same values for every field. But __they refer to different memory location__. As you know, equality on objects is made on the object reference - [here](https://coding.abel.nu/2014/09/net-and-equals/) a really good article. 
+Well, the two objects look identical, and have the same values for every field. But __they refer to different memory location__. As you know, equality on objects is made on the object reference - [here](https://coding.abel.nu/2014/09/net-and-equals/ ".NET equals article" ) a really good article. 
 
 So... How can we pass the test?
 
@@ -237,9 +239,6 @@ And what about structs? Oh, come on, who uses structs?? Well, who am I to judge 
 
 ![You are using structs??](https://media.giphy.com/media/fGnPmGqbBaB1e/giphy.gif)
 
-
-
-
 Ok, seriously. Structs are just like value types like _int_, but they can add additional fields.
 
 ```csharp
@@ -249,7 +248,6 @@ private struct Employee
      public int Age { get; set; }  
  }
 ```
-
 
 So the equality check is the simplest you can imagine.
 
@@ -345,6 +343,7 @@ public bool IsAuthorized(string username)
 
 We know that the method won't fail if you pass a valid username. But we also want to ensure that with a specific condition it will throw an exception.
 And we can check it this way:
+
 ```csharp
 [TestMethod]  
  public void TestThrowsException()  
