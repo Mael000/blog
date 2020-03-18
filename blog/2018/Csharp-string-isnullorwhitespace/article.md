@@ -13,6 +13,7 @@ That's a simple, yet complex, question.
 
 First of all, when a string is not empty? For me, when there is at least one character or one number.
 
+
 ## Do it from scratch
 
 Let's create a custom function to achieve this functionality.

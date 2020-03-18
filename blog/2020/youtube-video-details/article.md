@@ -84,14 +84,14 @@ var youTubeVideo = searchResponse.Items.FirstOrDefault();
 Finally, we can populate our YouTueVideoDetails object:
 
 ```csharp
- YouTubeVideoDetails videoDetails = new YouTubeVideoDetails()
-                {
-                    VideoId = youTubeVideo.Id,
-                    Description = youTubeVideo.Snippet.Description,
-                    Title = youTubeVideo.Snippet.Title,
-                    ChannelTitle = youTubeVideo.Snippet.ChannelTitle,
-                    PublicationDate = youTubeVideo.Snippet.PublishedAt
-                };
+YouTubeVideoDetails videoDetails = new YouTubeVideoDetails()
+{
+    VideoId = youTubeVideo.Id,
+    Description = youTubeVideo.Snippet.Description,
+    Title = youTubeVideo.Snippet.Title,
+    ChannelTitle = youTubeVideo.Snippet.ChannelTitle,
+    PublicationDate = youTubeVideo.Snippet.PublishedAt
+};
 ```
 
 The `youTubeVideo` object contains references to the thumbnails. As you might remember, in the article about [how to search for videos](https://www.code4it.dev/blog/search-youtube-videos-dotnet "How to search for YT videos") associated to a YouTube channel, I explained that the images that you get with the _Search_ endpoint are different to the ones here, in the _Videos_ endpoint. My suggestion is to try both the examples on my GitHub page (see below) and find the differences.

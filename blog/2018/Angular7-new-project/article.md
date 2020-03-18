@@ -32,7 +32,7 @@ As you can see in the above picture, the _--dry-run_ (or the alias -d) shows you
 
 This is also confirmed by the fact that looking up for the my-first-project dir, this doesn't exist.
 
-### --skip-install
+### --skip-install 
 
 If you want to create a project without losing time with the installation of the node modules, `--skip-install` is your choice.
 
@@ -40,12 +40,12 @@ With this option, the project will contain only the files, but packages won't be
 
 ### --style
 
-With the _style_ option, you can define the style of your style files for your project. The default is CSS, but you can specify your favourite kind with the command
+With the _style_ option, you can define the style of your style files for your project. The default is CSS, but you can specify your favourite kind with the command 
 
 `ng new my-project --syle=style-extension`
 
 Common sense makes you think that the available values would be CSS, SCSS and LESS, but the fact is that you can specify whatever you want, even not existing style format.
-
+ 
 In the example below I set the value to _foo_.
 
  ![ng new --style=foo](https://res.cloudinary.com/bellons/image/upload/v1566593493/Code4IT/Start%20new%20Angular%20project/ng-new-style-foo_z1ias2.png "ng new --style") 
