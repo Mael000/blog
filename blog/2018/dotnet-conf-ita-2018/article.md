@@ -8,7 +8,7 @@ slug: 'dotnet-conference-italia-2018'
 ---
 
 
-Friday, October 26th 2018 I attended the .NET Conference in Milan, Italy. It was an event organized by [ASP Italia](http://www.aspitalia.com), with the sponsorship of Microsoft and [Icubed](https://icubed.it/).
+Friday, October 26th 2018 I attended the .NET Conference in Milan, Italy. It was an event organized by [ASP Italia](http://www.aspitalia.com "ASP Italia website" ), with the sponsorship of Microsoft and [Icubed](https://icubed.it/ "Icubed website").
 
 The conference was about the news in the .NET world: .NET Core 2.x, Azure, C# 8 and Blazor and so on.
 
@@ -16,9 +16,9 @@ I'm not going to talk about everything we discussed - of course, I cannot write 
 
 ## Interfaces are abstract classes
 
-I always thought that interfaces and abstract classes were totally different things. Using the [Sharplab](https://sharplab.io) online tool, that shows the IL result of a C# snippet, they highlighted that __internally an interface is also an abstract class__.
+I always thought that interfaces and abstract classes were totally different things. Using the [Sharplab](https://sharplab.io "Sharplab website") online tool, that shows the IL result of a C# snippet, they highlighted that __internally an interface is also an abstract class__.
 
-![Interface as Abstract class](https://res.cloudinary.com/bellons/image/upload/Code4IT/Few%20things%20from%20.NET%20conf%202018/interface-as-abstract-class.png)
+![Interface as Abstract class](https://res.cloudinary.com/bellons/image/upload/Code4IT/Few%20things%20from%20.NET%20conf%202018/interface-as-abstract-class.png "IL of interface definition")
 
 Actually, __this doesn't mean that you can declare abstract methods in interfaces__. But that brought the Microsoft team to a brand new functionality in C# 8: default method implementations for interfaces.
 
@@ -56,17 +56,17 @@ On the other side, the simple compilation allows your application to start very 
 
 __Tiered compilation__ takes the best of both worlds. It swaps the compilation method at runtime: the normal compilation can be used at start-up time, while in the background the optimized compilation is taking place. When it's ready, compilation methods are swapped.
 
-[Here](https://blogs.msdn.microsoft.com/dotnet/2018/08/02/tiered-compilation-preview-in-net-core-2-1/) you can find an interesting article that explains this kind of compilation more in detail.
+[Here](https://blogs.msdn.microsoft.com/dotnet/2018/08/02/tiered-compilation-preview-in-net-core-2-1/ "Tiered compilation on Microsoft docs") you can find an interesting article that explains this kind of compilation more in detail.
 
 ## Blazor, an experiment framework
 
-If you are used to .NET MVC, but you also want to write client-side logic in C#, [Blazor](https://blazor.net/) can be the right choice.
+If you are used to .NET MVC, but you also want to write client-side logic in C#, [Blazor](https://blazor.net/ "Blazor website") can be the right choice.
 
-This framework runs on [WebAssembly](https://webassembly.org/), which allows you to call .NET Standard libraries from the browser, using a syntax similar to Razor. And yes, "Blazor" is the crasis of Browser and Razor.
+This framework runs on [WebAssembly](https://webassembly.org/ "WebAssembly website"), which allows you to call .NET Standard libraries from the browser, using a syntax similar to Razor. And yes, "Blazor" is the crasis of Browser and Razor.
 
-As you can see in the image below taken [from caniuse.com](https://caniuse.com/#search=webassembly), WebAssembly is supported by the most used browsers, even on mobile.
+As you can see in the image below taken [from caniuse.com](https://caniuse.com/#search=webassembly "CanIUse link"), WebAssembly is supported by the most used browsers, even on mobile.
 
-![WebAssembly caniuse](https://res.cloudinary.com/bellons/image/upload/Code4IT/Few%20things%20from%20.NET%20conf%202018/interface-as-abstract-class.png) 
+![WebAssembly reference on CanIUse](https://res.cloudinary.com/bellons/image/upload/Code4IT/Few%20things%20from%20.NET%20conf%202018/interface-as-abstract-class.png "WebAssembly reference on CanIUse") 
 
 This is still an experiment. In my opinion, in a few years this project will be dropped, due to the constant improvement of client-side technologies based on JavaScript. This framework is not meant to replace pure JavaScript or other frameworks (like Angular, Vue.js), but it is oriented to server-side developers that want to approach client side development.
 
@@ -80,4 +80,4 @@ In Visual Studio you can download tools for Tizen and write apps for Samsung TVs
 
 ## Conclusion
 
-The conference was really stimulating. In this article, I gave just a quick overview of some of the things I learned, but I didn't mention the main topics of the speeches. If you are curious to know what the conference was about, [you can have a look at the agenda](http://www.aspitalia.com/eventi/72/.NET-Conference-Italia-2018-Milano.aspx) (of course, in Italian).
+The conference was really stimulating. In this article, I gave just a quick overview of some of the things I learned, but I didn't mention the main topics of the speeches. If you are curious to know what the conference was about, [you can have a look at the agenda](http://www.aspitalia.com/eventi/72/.NET-Conference-Italia-2018-Milano.aspx "DotNet conf agenda" ) (of course, in Italian).
