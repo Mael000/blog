@@ -26,16 +26,16 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-manifest',
     'gatsby-plugin-catch-links',
-{
-  resolve: `gatsby-plugin-disqus`,
-  options: {
-    shortname: `code4it`
-  }
-},
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `code4it`
+      }
+    },
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        exclude: [ `/post-schedule`],
+        exclude: [`/post-schedule`],
 
       }
     }, 'gatsby-plugin-lodash',
@@ -141,7 +141,13 @@ module.exports = {
             },
           },
           'gatsby-remark-prismjs',
-          'gatsby-remark-autolink-headers',
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+
+              isIconAfterHeader: true
+            }
+          },
           'gatsby-remark-figure-caption'
         ],
       },
@@ -178,14 +184,14 @@ module.exports = {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
           config.Google_Tag_Manager_ID, // Google Analytics / GA
-             ],
- 
+        ],
+
         // This object is used for configuration specific to this plugin
         pluginConfig: {
           // Puts tracking script in the head instead of the body
           head: false,
           // Setting this parameter is also optional
-          respectDNT: true 
+          respectDNT: true
         },
       },
     },
