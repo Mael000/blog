@@ -77,7 +77,7 @@ So, don't do it. Or, at least, do it when you have more confidence in yourself. 
 
 Well, this is my experience. 
 
-If you want to see this disaster, you can [watch it on YouTube](https://youtu.be/hSCwzEm4M1A). Most of you won't understand so much, since it is in Italian.
+If you want to see this disaster, you can [watch it on YouTube](https://youtu.be/hSCwzEm4M1A "My presentation on YouTube"). Most of you won't understand so much, since it is in Italian.
 
 But I still have the excuse that it was my first time. So from now on, I can only improve my speeches.
 

@@ -48,13 +48,13 @@ __PSSS! Remember not to use HTTPS!!__
 
 More in detail, it sends an ICMP echo request to a specified interface and waits for a reply.
 
-Just as a reminder, [ICMP (_Internet Control Message Protocol_)](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol) is a network protocol that is at the same level as TCP and UDP on the networking stack, but it is typically not used for exchanging data between endpoints but only for sharing errors or information.
+Just as a reminder, [ICMP (_Internet Control Message Protocol_)](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol "ICMP explaination on Wikipedia") is a network protocol that is at the same level as TCP and UDP on the networking stack, but it is typically not used for exchanging data between endpoints but only for sharing errors or information.
 
 ## Azure and ICMP
 
 The problem comes when you want to ping a service hosted on Azure: in order to avoid DDoS attacks, the Azure team decided to block ICMP packets.
 
-As [stated by the Azure Networking Team](https://feedback.azure.com/forums/217313-networking/suggestions/3346609-icmp-support-for-azure-websites-roles-cloud-serv):
+As [stated by the Azure Networking Team](https://feedback.azure.com/forums/217313-networking/suggestions/3346609-icmp-support-for-azure-websites-roles-cloud-serv "Azure Networking Team answer"):
 > Unfortunately ICMP presents risks and problems for our underlying network infrastructure.
 
 So you cannot ping them. 
@@ -69,7 +69,6 @@ Let's say that you have a website, _mysite.azurewebsites.net_, that must communi
 
 Of course, you can't open a browser _inside_ the Azure portal. So what?
 
-
 ## TCPPing - the solution for you
 
 If you try to ping _myapi_ from Azure, you won't receive a __Request time out__, but a different error: 
@@ -78,7 +77,7 @@ If you try to ping _myapi_ from Azure, you won't receive a __Request time out__,
 Unable to contact IP driver. General failure
 ```
 
-![Unable to contact IP driver](https://res.cloudinary.com/bellons/image/upload/Code4IT/TCPPING/ping_console.png)
+![Unable to contact IP driver](https://res.cloudinary.com/bellons/image/upload/Code4IT/TCPPING/ping_console.png "PING error message")
 
 That's because the ping command has directly been disabled.
 
@@ -102,7 +101,7 @@ Complete: 4/4 successful attempts (100%). Average success time: 124.5ms
 
 That, in the console, looks like this:
 
-![tcpping example](https://res.cloudinary.com/bellons/image/upload/v1576150918/Code4IT/TCPPING/tcpping_console.png)
+![tcpping example](https://res.cloudinary.com/bellons/image/upload/v1576150918/Code4IT/TCPPING/tcpping_console.png "TCPPing working example")
 
 If you wanna have more info about this command, you can simply type `tcpping`.
 
