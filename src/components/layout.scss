@@ -33,22 +33,29 @@ $grey-dark: #2b2b2b;
 $grey-light: #eee;
 $green: #86c023;
 $blue: #017ac7;
+$primary: #317580;
 
 // Transition
 $duration: 400ms;
 $easing: ease;
 
 
-.tag{
+a.article-tag{
   border-bottom: solid;
   border-right: solid;
-  border-radius: 10%;
+  border-radius: 50vh;
   border-color: gray;
   background: lightgray;
-  margin-left: 4px;
   padding: 0 5px;
+  color: $grey-dark;
+
+  &:not(:first-of-type){
+  margin-left: 4px;
+
 }
 
+}
+ 
 article figure{
   display: flex;
   flex-direction: column;
@@ -57,4 +64,56 @@ article figure{
   figcaption{
     text-decoration: underline;
   }
+}
+
+
+:not(pre) > code[class*="language-"]{
+  word-break: break-all;
+}
+
+article[class ^=Post__PostContent] a{
+  color: $primary;
+  text-decoration: underline;
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+  height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 90%;
+	height: 90%;
+}
+
+
+.SublineWithSpaceBetween{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+div .separator{
+  border: solid 0.5px $grey;
+  margin: 1rem 20%;
+}
+
+ 
+.post-schedule[data-year^="2020"]{
+  background-color: #b5e7a0;
+}
+.post-schedule[data-year^="2019"]{
+  background-color: #e3eaa7;
+}
+.post-schedule[data-year^="2018"]{
+  background-color: #d5e1df;
+}
+.post-schedule.new{
+  background-color: initial;
 }
