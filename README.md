@@ -1,4 +1,4 @@
-## Code4IT blog made with <3 and GatsbyJS
+## Code4IT blog made with <3 and GatsbyJS with pippo
 
 This is the repository for my blog: [www.code4it.dev](https://www.code4it.dev).
 
